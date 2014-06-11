@@ -102,10 +102,12 @@
     NSDictionary *object;
     
     if (tableView == self.searchDisplayController.searchResultsTableView) {
-        cell = [self.tableView dequeueReusableCellWithIdentifier:@"SearchCell" forIndexPath:indexPath];
+        
+        cell = [self.tableView dequeueReusableCellWithIdentifier:@"SearchCell"];
         cell.selectionStyle = UITableViewCellSelectionStyleDefault;
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         object = _filteredObjects[indexPath.row];
+        
     }
     else {
         
