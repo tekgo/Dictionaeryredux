@@ -117,6 +117,7 @@
         if(currentFilter) {
             if([currentFilter isEqualToString:object[@"traumae"]]) {
                 cell = [self.tableView dequeueReusableCellWithIdentifier:@"DetailCell" forIndexPath:indexPath];
+                cell.selectionStyle = UITableViewCellSelectionStyleNone;
                 UILabel* detailsTraumae = (UILabel*)[cell viewWithTag:100];
                 UIFont *font =[UIFont fontWithName:@"Septambres-Revisit" size:24];
                 detailsTraumae.font = font;
@@ -164,22 +165,18 @@
 }
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSDictionary *object;
     
     if (tableView == self.searchDisplayController.searchResultsTableView) {
         return indexPath;
     }
-    else {
-        object = _objects[indexPath.row];
-    }
+    
+    NSDictionary *object = _objects[indexPath.row];
     
     if(currentFilter) {
         if([currentFilter isEqualToString:object[@"traumae"]])
             return nil;
     }
-    /*if([object[@"children"] intValue] == 0) {
-        return nil;
-    }*/
+
     
     return indexPath;
 }
@@ -200,41 +197,34 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSDictionary *object;
-        if (self.searchDisplayController.active) {
-            object = [_filteredObjects objectAtIndex: self.searchDisplayController.searchResultsTableView.indexPathForSelectedRow.row];
-        }
-        else {
-            NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-            object = _objects[indexPath.row];
-        }
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        NSDictionary *object = _objects[indexPath.row];
         
+        [(dictMasterViewController*)[segue destinationViewController] setFilter:object[@"traumae"]];
+    }
+    if ([[segue identifier] isEqualToString:@"searchDetail"]) {
+        NSDictionary *object = [_filteredObjects objectAtIndex: self.searchDisplayController.searchResultsTableView.indexPathForSelectedRow.row];
         [(dictMasterViewController*)[segue destinationViewController] setFilter:object[@"traumae"]];
     }
 }
 
 -(void)setFilter:(NSString*)filter {
     if(filter) {
-    _objects = [[dictDataStore sharedDataStore] DataforFilter:filter maxLength:(int)filter.length+2];
-    
-    [self setTitle:filter];
-    currentFilter = filter;
+        _objects = [[dictDataStore sharedDataStore] DataforFilter:filter maxLength:(int)filter.length+2];
+        
+        [self setTitle:[filter capitalizedString]];
+        currentFilter = filter;
         [self.tableView reloadData];
         //self.searchBar.hidden=true;
+        /*if(_objects.count==1) {
+            self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        }*/
     }
 }
 
 #pragma mark Content Filtering
 -(void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope {
     _filteredObjects = [[dictDataStore sharedDataStore] DataForSearch:[searchText lowercaseString]];
-    /*
-    // Update the filtered array based on the search text and scope.
-    // Remove all objects from the filtered search array
-    [self.filteredCandyArray removeAllObjects];
-    // Filter the array using NSPredicate
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.name contains[c] %@",searchText];
-    filteredCandyArray = [NSMutableArray arrayWithArray:[candyArray filteredArrayUsingPredicate:predicate]];
-     */
 }
 
 #pragma mark - UISearchDisplayController Delegate Methods

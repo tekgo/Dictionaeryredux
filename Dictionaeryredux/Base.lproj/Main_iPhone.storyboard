@@ -36,7 +36,7 @@
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="2pz-XF-uhl" detailTextLabel="6g7-xT-YNB" style="IBUITableViewCellStyleSubtitle" id="m0d-ak-lc9">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="Cell" textLabel="2pz-XF-uhl" detailTextLabel="6g7-xT-YNB" style="IBUITableViewCellStyleSubtitle" id="m0d-ak-lc9">
                                 <rect key="frame" x="0.0" y="130" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m0d-ak-lc9" id="d3P-M7-ByW">
@@ -59,7 +59,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <segue destination="pGg-6v-bdr" kind="push" identifier="showDetail" id="pX6-A4-poO"/>
                                 </connections>
@@ -88,7 +87,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="pGg-6v-bdr" kind="push" identifier="showDetail" id="uAv-I6-8h9"/>
+                                    <segue destination="pGg-6v-bdr" kind="push" identifier="searchDetail" id="uAv-I6-8h9"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell appearanceType="aqua" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCell" rowHeight="88" id="ogd-Yp-Bv7">
@@ -98,8 +97,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="87"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSg-7Y-vHO">
-                                            <rect key="frame" x="20" y="11" width="32" height="33"/>
+                                        <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="HSg-7Y-vHO">
+                                            <rect key="frame" x="20" y="11" width="58" height="33"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="32" id="vCV-bK-A2F"/>
@@ -108,17 +107,17 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="400" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oVz-qY-OOW">
-                                            <rect key="frame" x="63" y="11" width="100" height="33"/>
+                                        <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="400" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="oVz-qY-OOW">
+                                            <rect key="frame" x="89" y="11" width="100" height="33"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="OSO-yg-Bjm"/>
+                                                <constraint firstAttribute="width" constant="100" id="Y3L-s4-guu"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="300" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uAJ-6C-aZV">
+                                        <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="300" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="uAJ-6C-aZV">
                                             <rect key="frame" x="240" y="11" width="60" height="33"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <constraints>
@@ -141,15 +140,16 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="oVz-qY-OOW" firstAttribute="baseline" secondItem="HSg-7Y-vHO" secondAttribute="baseline" id="0IU-EK-17R"/>
                                         <constraint firstItem="uAJ-6C-aZV" firstAttribute="trailing" secondItem="4Ug-NM-PzM" secondAttribute="trailing" id="ASI-jJ-oJF"/>
-                                        <constraint firstItem="oVz-qY-OOW" firstAttribute="baseline" secondItem="uAJ-6C-aZV" secondAttribute="baseline" id="E12-0N-fnH"/>
+                                        <constraint firstItem="oVz-qY-OOW" firstAttribute="top" secondItem="uAJ-6C-aZV" secondAttribute="top" id="C8x-om-DRa"/>
+                                        <constraint firstItem="oVz-qY-OOW" firstAttribute="baseline" secondItem="HSg-7Y-vHO" secondAttribute="baseline" id="DWW-Bp-5T1"/>
                                         <constraint firstItem="4Ug-NM-PzM" firstAttribute="top" secondItem="HSg-7Y-vHO" secondAttribute="bottom" constant="11" id="IZL-gP-uqW"/>
-                                        <constraint firstItem="oVz-qY-OOW" firstAttribute="top" secondItem="HSg-7Y-vHO" secondAttribute="top" id="Lth-Nj-aOe"/>
                                         <constraint firstAttribute="trailing" secondItem="4Ug-NM-PzM" secondAttribute="trailing" constant="20" symbolic="YES" id="OvP-nf-BIT"/>
-                                        <constraint firstItem="oVz-qY-OOW" firstAttribute="top" secondItem="uAJ-6C-aZV" secondAttribute="top" id="U0h-f2-RAS"/>
+                                        <constraint firstItem="uAJ-6C-aZV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="oVz-qY-OOW" secondAttribute="trailing" constant="11" id="eAO-5Q-JdK"/>
                                         <constraint firstItem="4Ug-NM-PzM" firstAttribute="leading" secondItem="HSg-7Y-vHO" secondAttribute="leading" id="f4H-fK-dQW"/>
-                                        <constraint firstItem="oVz-qY-OOW" firstAttribute="leading" secondItem="HSg-7Y-vHO" secondAttribute="trailing" constant="11" id="lrS-BI-Gdo"/>
+                                        <constraint firstItem="oVz-qY-OOW" firstAttribute="top" secondItem="HSg-7Y-vHO" secondAttribute="top" id="h7i-Yh-Key"/>
+                                        <constraint firstItem="oVz-qY-OOW" firstAttribute="baseline" secondItem="uAJ-6C-aZV" secondAttribute="baseline" id="ov8-B9-R6p"/>
+                                        <constraint firstItem="oVz-qY-OOW" firstAttribute="leading" secondItem="HSg-7Y-vHO" secondAttribute="trailing" constant="11" id="p0t-r6-nTA"/>
                                         <constraint firstItem="HSg-7Y-vHO" firstAttribute="top" secondItem="VRX-wK-bT7" secondAttribute="top" constant="11" id="x1h-d5-M97"/>
                                         <constraint firstItem="HSg-7Y-vHO" firstAttribute="leading" secondItem="VRX-wK-bT7" secondAttribute="leading" constant="20" symbolic="YES" id="xWH-xb-m6T"/>
                                     </constraints>
@@ -163,9 +163,7 @@
                             <outlet property="delegate" destination="pGg-6v-bdr" id="Y6K-Cp-Qkv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Dictionæry" id="tQt-TN-PWz">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="lL5-8b-ynt"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Dictionæry" id="tQt-TN-PWz"/>
                     <connections>
                         <outlet property="searchBar" destination="EEV-wk-VAk" id="qtd-3n-vjA"/>
                         <outlet property="searchDisplayController" destination="bfs-9y-qrd" id="WTv-NV-c14"/>
