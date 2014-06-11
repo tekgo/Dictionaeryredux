@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58931CFC1947F8F800888967 /* septambres-fune.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58931CFA1947F8F800888967 /* septambres-fune.ttf */; };
+		58931CFD1947F8F800888967 /* Septambres-Revisit.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58931CFB1947F8F800888967 /* Septambres-Revisit.ttf */; };
 		58B197AB1947879000B9D9FA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58B197AA1947879000B9D9FA /* Foundation.framework */; };
 		58B197AD1947879100B9D9FA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58B197AC1947879100B9D9FA /* CoreGraphics.framework */; };
 		58B197AF1947879100B9D9FA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58B197AE1947879100B9D9FA /* UIKit.framework */; };
@@ -14,15 +16,15 @@
 		58B197B71947879100B9D9FA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B197B61947879100B9D9FA /* main.m */; };
 		58B197BB1947879100B9D9FA /* dictAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B197BA1947879100B9D9FA /* dictAppDelegate.m */; };
 		58B197BE1947879100B9D9FA /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58B197BC1947879100B9D9FA /* Main_iPhone.storyboard */; };
-		58B197C11947879100B9D9FA /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58B197BF1947879100B9D9FA /* Main_iPad.storyboard */; };
 		58B197C41947879100B9D9FA /* dictMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B197C31947879100B9D9FA /* dictMasterViewController.m */; };
-		58B197C71947879100B9D9FA /* dictDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B197C61947879100B9D9FA /* dictDetailViewController.m */; };
 		58B197C91947879100B9D9FA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58B197C81947879100B9D9FA /* Images.xcassets */; };
 		58B197D01947879100B9D9FA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58B197CF1947879100B9D9FA /* XCTest.framework */; };
 		58B197D11947879100B9D9FA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58B197AA1947879000B9D9FA /* Foundation.framework */; };
 		58B197D21947879100B9D9FA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58B197AE1947879100B9D9FA /* UIKit.framework */; };
 		58B197DA1947879100B9D9FA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58B197D81947879100B9D9FA /* InfoPlist.strings */; };
 		58B197DC1947879100B9D9FA /* DictionaeryplusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B197DB1947879100B9D9FA /* DictionaeryplusTests.m */; };
+		58B197E71947906E00B9D9FA /* dictDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B197E61947906E00B9D9FA /* dictDataStore.m */; };
+		58B197E9194790D000B9D9FA /* dict.json in Resources */ = {isa = PBXBuildFile; fileRef = 58B197E8194790D000B9D9FA /* dict.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,28 +38,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		58B197A71947879000B9D9FA /* Dictionaeryplus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dictionaeryplus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		58931CFA1947F8F800888967 /* septambres-fune.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "septambres-fune.ttf"; sourceTree = "<group>"; };
+		58931CFB1947F8F800888967 /* Septambres-Revisit.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Septambres-Revisit.ttf"; sourceTree = "<group>"; };
+		58B197A71947879000B9D9FA /* Dictionaeryredux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dictionaeryredux.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58B197AA1947879000B9D9FA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		58B197AC1947879100B9D9FA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		58B197AE1947879100B9D9FA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		58B197B21947879100B9D9FA /* Dictionaeryplus-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Dictionaeryplus-Info.plist"; sourceTree = "<group>"; };
+		58B197B21947879100B9D9FA /* Dictionaeryredux-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Dictionaeryredux-Info.plist"; sourceTree = "<group>"; };
 		58B197B41947879100B9D9FA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		58B197B61947879100B9D9FA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		58B197B81947879100B9D9FA /* Dictionaeryplus-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dictionaeryplus-Prefix.pch"; sourceTree = "<group>"; };
+		58B197B81947879100B9D9FA /* Dictionaeryredux-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dictionaeryredux-Prefix.pch"; sourceTree = "<group>"; };
 		58B197B91947879100B9D9FA /* dictAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dictAppDelegate.h; sourceTree = "<group>"; };
 		58B197BA1947879100B9D9FA /* dictAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dictAppDelegate.m; sourceTree = "<group>"; };
 		58B197BD1947879100B9D9FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		58B197C01947879100B9D9FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		58B197C21947879100B9D9FA /* dictMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dictMasterViewController.h; sourceTree = "<group>"; };
 		58B197C31947879100B9D9FA /* dictMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dictMasterViewController.m; sourceTree = "<group>"; };
-		58B197C51947879100B9D9FA /* dictDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dictDetailViewController.h; sourceTree = "<group>"; };
-		58B197C61947879100B9D9FA /* dictDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dictDetailViewController.m; sourceTree = "<group>"; };
 		58B197C81947879100B9D9FA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		58B197CE1947879100B9D9FA /* DictionaeryplusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DictionaeryplusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		58B197CE1947879100B9D9FA /* DictionaeryreduxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DictionaeryreduxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		58B197CF1947879100B9D9FA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		58B197D71947879100B9D9FA /* DictionaeryplusTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DictionaeryplusTests-Info.plist"; sourceTree = "<group>"; };
+		58B197D71947879100B9D9FA /* DictionaeryreduxTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DictionaeryreduxTests-Info.plist"; sourceTree = "<group>"; };
 		58B197D91947879100B9D9FA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		58B197DB1947879100B9D9FA /* DictionaeryplusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DictionaeryplusTests.m; sourceTree = "<group>"; };
+		58B197E51947906E00B9D9FA /* dictDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dictDataStore.h; sourceTree = "<group>"; };
+		58B197E61947906E00B9D9FA /* dictDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dictDataStore.m; sourceTree = "<group>"; };
+		58B197E8194790D000B9D9FA /* dict.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dict.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,8 +91,8 @@
 		58B1979E1947879000B9D9FA = {
 			isa = PBXGroup;
 			children = (
-				58B197B01947879100B9D9FA /* Dictionaeryplus */,
-				58B197D51947879100B9D9FA /* DictionaeryplusTests */,
+				58B197B01947879100B9D9FA /* Dictionaeryredux */,
+				58B197D51947879100B9D9FA /* DictionaeryreduxTests */,
 				58B197A91947879000B9D9FA /* Frameworks */,
 				58B197A81947879000B9D9FA /* Products */,
 			);
@@ -97,8 +101,8 @@
 		58B197A81947879000B9D9FA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				58B197A71947879000B9D9FA /* Dictionaeryplus.app */,
-				58B197CE1947879100B9D9FA /* DictionaeryplusTests.xctest */,
+				58B197A71947879000B9D9FA /* Dictionaeryredux.app */,
+				58B197CE1947879100B9D9FA /* DictionaeryreduxTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -114,47 +118,49 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		58B197B01947879100B9D9FA /* Dictionaeryplus */ = {
+		58B197B01947879100B9D9FA /* Dictionaeryredux */ = {
 			isa = PBXGroup;
 			children = (
 				58B197B91947879100B9D9FA /* dictAppDelegate.h */,
 				58B197BA1947879100B9D9FA /* dictAppDelegate.m */,
 				58B197BC1947879100B9D9FA /* Main_iPhone.storyboard */,
-				58B197BF1947879100B9D9FA /* Main_iPad.storyboard */,
 				58B197C21947879100B9D9FA /* dictMasterViewController.h */,
 				58B197C31947879100B9D9FA /* dictMasterViewController.m */,
-				58B197C51947879100B9D9FA /* dictDetailViewController.h */,
-				58B197C61947879100B9D9FA /* dictDetailViewController.m */,
+				58B197E51947906E00B9D9FA /* dictDataStore.h */,
+				58B197E61947906E00B9D9FA /* dictDataStore.m */,
 				58B197C81947879100B9D9FA /* Images.xcassets */,
 				58B197B11947879100B9D9FA /* Supporting Files */,
 			);
-			path = Dictionaeryplus;
+			path = Dictionaeryredux;
 			sourceTree = "<group>";
 		};
 		58B197B11947879100B9D9FA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				58B197B21947879100B9D9FA /* Dictionaeryplus-Info.plist */,
+				58931CFA1947F8F800888967 /* septambres-fune.ttf */,
+				58931CFB1947F8F800888967 /* Septambres-Revisit.ttf */,
+				58B197E8194790D000B9D9FA /* dict.json */,
+				58B197B21947879100B9D9FA /* Dictionaeryredux-Info.plist */,
 				58B197B31947879100B9D9FA /* InfoPlist.strings */,
 				58B197B61947879100B9D9FA /* main.m */,
-				58B197B81947879100B9D9FA /* Dictionaeryplus-Prefix.pch */,
+				58B197B81947879100B9D9FA /* Dictionaeryredux-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		58B197D51947879100B9D9FA /* DictionaeryplusTests */ = {
+		58B197D51947879100B9D9FA /* DictionaeryreduxTests */ = {
 			isa = PBXGroup;
 			children = (
 				58B197DB1947879100B9D9FA /* DictionaeryplusTests.m */,
 				58B197D61947879100B9D9FA /* Supporting Files */,
 			);
-			path = DictionaeryplusTests;
+			path = DictionaeryreduxTests;
 			sourceTree = "<group>";
 		};
 		58B197D61947879100B9D9FA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				58B197D71947879100B9D9FA /* DictionaeryplusTests-Info.plist */,
+				58B197D71947879100B9D9FA /* DictionaeryreduxTests-Info.plist */,
 				58B197D81947879100B9D9FA /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -163,9 +169,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		58B197A61947879000B9D9FA /* Dictionaeryplus */ = {
+		58B197A61947879000B9D9FA /* Dictionaeryredux */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 58B197DF1947879100B9D9FA /* Build configuration list for PBXNativeTarget "Dictionaeryplus" */;
+			buildConfigurationList = 58B197DF1947879100B9D9FA /* Build configuration list for PBXNativeTarget "Dictionaeryredux" */;
 			buildPhases = (
 				58B197A31947879000B9D9FA /* Sources */,
 				58B197A41947879000B9D9FA /* Frameworks */,
@@ -175,14 +181,14 @@
 			);
 			dependencies = (
 			);
-			name = Dictionaeryplus;
+			name = Dictionaeryredux;
 			productName = Dictionaeryplus;
-			productReference = 58B197A71947879000B9D9FA /* Dictionaeryplus.app */;
+			productReference = 58B197A71947879000B9D9FA /* Dictionaeryredux.app */;
 			productType = "com.apple.product-type.application";
 		};
-		58B197CD1947879100B9D9FA /* DictionaeryplusTests */ = {
+		58B197CD1947879100B9D9FA /* DictionaeryreduxTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 58B197E21947879100B9D9FA /* Build configuration list for PBXNativeTarget "DictionaeryplusTests" */;
+			buildConfigurationList = 58B197E21947879100B9D9FA /* Build configuration list for PBXNativeTarget "DictionaeryreduxTests" */;
 			buildPhases = (
 				58B197CA1947879100B9D9FA /* Sources */,
 				58B197CB1947879100B9D9FA /* Frameworks */,
@@ -193,9 +199,9 @@
 			dependencies = (
 				58B197D41947879100B9D9FA /* PBXTargetDependency */,
 			);
-			name = DictionaeryplusTests;
+			name = DictionaeryreduxTests;
 			productName = DictionaeryplusTests;
-			productReference = 58B197CE1947879100B9D9FA /* DictionaeryplusTests.xctest */;
+			productReference = 58B197CE1947879100B9D9FA /* DictionaeryreduxTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -213,7 +219,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 58B197A21947879000B9D9FA /* Build configuration list for PBXProject "Dictionaeryplus" */;
+			buildConfigurationList = 58B197A21947879000B9D9FA /* Build configuration list for PBXProject "Dictionaeryredux" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -226,8 +232,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				58B197A61947879000B9D9FA /* Dictionaeryplus */,
-				58B197CD1947879100B9D9FA /* DictionaeryplusTests */,
+				58B197A61947879000B9D9FA /* Dictionaeryredux */,
+				58B197CD1947879100B9D9FA /* DictionaeryreduxTests */,
 			);
 		};
 /* End PBXProject section */
@@ -237,10 +243,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58B197C11947879100B9D9FA /* Main_iPad.storyboard in Resources */,
 				58B197C91947879100B9D9FA /* Images.xcassets in Resources */,
+				58B197E9194790D000B9D9FA /* dict.json in Resources */,
 				58B197BE1947879100B9D9FA /* Main_iPhone.storyboard in Resources */,
+				58931CFD1947F8F800888967 /* Septambres-Revisit.ttf in Resources */,
 				58B197B51947879100B9D9FA /* InfoPlist.strings in Resources */,
+				58931CFC1947F8F800888967 /* septambres-fune.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,9 +268,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				58B197C41947879100B9D9FA /* dictMasterViewController.m in Sources */,
+				58B197E71947906E00B9D9FA /* dictDataStore.m in Sources */,
 				58B197BB1947879100B9D9FA /* dictAppDelegate.m in Sources */,
 				58B197B71947879100B9D9FA /* main.m in Sources */,
-				58B197C71947879100B9D9FA /* dictDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,7 +287,7 @@
 /* Begin PBXTargetDependency section */
 		58B197D41947879100B9D9FA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 58B197A61947879000B9D9FA /* Dictionaeryplus */;
+			target = 58B197A61947879000B9D9FA /* Dictionaeryredux */;
 			targetProxy = 58B197D31947879100B9D9FA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -299,14 +307,6 @@
 				58B197BD1947879100B9D9FA /* Base */,
 			);
 			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		58B197BF1947879100B9D9FA /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				58B197C01947879100B9D9FA /* Base */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		58B197D81947879100B9D9FA /* InfoPlist.strings */ = {
@@ -398,9 +398,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Dictionaeryplus/Dictionaeryplus-Prefix.pch";
-				INFOPLIST_FILE = "Dictionaeryplus/Dictionaeryplus-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "Dictionaeryredux/Dictionaeryredux-Prefix.pch";
+				INFOPLIST_FILE = "Dictionaeryredux/Dictionaeryredux-Info.plist";
+				PRODUCT_NAME = Dictionaeryredux;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -411,9 +412,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Dictionaeryplus/Dictionaeryplus-Prefix.pch";
-				INFOPLIST_FILE = "Dictionaeryplus/Dictionaeryplus-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "Dictionaeryredux/Dictionaeryredux-Prefix.pch";
+				INFOPLIST_FILE = "Dictionaeryredux/Dictionaeryredux-Info.plist";
+				PRODUCT_NAME = Dictionaeryredux;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -421,20 +423,20 @@
 		58B197E31947879100B9D9FA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Dictionaeryplus.app/Dictionaeryplus";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Dictionaeryredux.app/Dictionaeryredux";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Dictionaeryplus/Dictionaeryplus-Prefix.pch";
+				GCC_PREFIX_HEADER = "Dictionaeryredux/Dictionaeryredux-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "DictionaeryplusTests/DictionaeryplusTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "DictionaeryplusTests/DictionaeryreduxTests-Info.plist";
+				PRODUCT_NAME = DictionaeryreduxTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -443,16 +445,16 @@
 		58B197E41947879100B9D9FA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Dictionaeryplus.app/Dictionaeryplus";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Dictionaeryredux.app/Dictionaeryredux";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Dictionaeryplus/Dictionaeryplus-Prefix.pch";
-				INFOPLIST_FILE = "DictionaeryplusTests/DictionaeryplusTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "Dictionaeryredux/Dictionaeryredux-Prefix.pch";
+				INFOPLIST_FILE = "DictionaeryplusTests/DictionaeryreduxTests-Info.plist";
+				PRODUCT_NAME = DictionaeryreduxTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -461,7 +463,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		58B197A21947879000B9D9FA /* Build configuration list for PBXProject "Dictionaeryplus" */ = {
+		58B197A21947879000B9D9FA /* Build configuration list for PBXProject "Dictionaeryredux" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				58B197DD1947879100B9D9FA /* Debug */,
@@ -470,21 +472,23 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		58B197DF1947879100B9D9FA /* Build configuration list for PBXNativeTarget "Dictionaeryplus" */ = {
+		58B197DF1947879100B9D9FA /* Build configuration list for PBXNativeTarget "Dictionaeryredux" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				58B197E01947879100B9D9FA /* Debug */,
 				58B197E11947879100B9D9FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		58B197E21947879100B9D9FA /* Build configuration list for PBXNativeTarget "DictionaeryplusTests" */ = {
+		58B197E21947879100B9D9FA /* Build configuration list for PBXNativeTarget "DictionaeryreduxTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				58B197E31947879100B9D9FA /* Debug */,
 				58B197E41947879100B9D9FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

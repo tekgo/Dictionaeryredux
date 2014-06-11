@@ -1,6 +1,6 @@
 //
 //  dictAppDelegate.m
-//  Dictionaeryplus
+//  Dictionaeryredux
 //
 //  Created by Patrick Winchell on 6/10/14.
 //  Copyright (c) 2014 Patrick Winchell. All rights reserved.
@@ -13,11 +13,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
-        UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
-        splitViewController.delegate = (id)navigationController.topViewController;
-    }
     return YES;
 }
 							

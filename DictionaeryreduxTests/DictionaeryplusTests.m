@@ -1,6 +1,6 @@
 //
-//  DictionaeryplusTests.m
-//  DictionaeryplusTests
+//  DictionaeryreduxTests.m
+//  DictionaeryreduxTests
 //
 //  Created by Patrick Winchell on 6/10/14.
 //  Copyright (c) 2014 Patrick Winchell. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface DictionaeryplusTests : XCTestCase
+@interface DictionaeryreduxTests : XCTestCase
 
 @end
 
-@implementation DictionaeryplusTests
+@implementation DictionaeryreduxTests
 
 - (void)setUp
 {
