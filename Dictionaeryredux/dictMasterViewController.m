@@ -126,7 +126,7 @@
                 detailsTraumae.font = font;
                 detailsTraumae.text = [self toQwerty:object[@"traumae"]];
                 
-                ((UILabel*)[cell viewWithTag:300]).text = object[@"traumae"];
+                ((UILabel*)[cell viewWithTag:300]).text = (NSString*)object[@"traumae"] ;
                 
                 ((UILabel*)[cell viewWithTag:400]).text = [(NSString*)object[@"adultspeak"] uppercaseString] ;
                 ((UILabel*)[cell viewWithTag:400]).font = [UIFont fontWithName:@"Didot-Bold" size:28];
@@ -194,7 +194,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
