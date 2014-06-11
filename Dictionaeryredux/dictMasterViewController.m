@@ -35,10 +35,12 @@
         _objects = [[dictDataStore sharedDataStore] DataforFilter:Nil maxLength:2];
     else
     {
-        float delta = self.searchBar.frame.size.height;
-        self.searchBar.frame = CGRectOffset(self.searchBar.frame, 0.0, -delta);
-        self.searchBar.hidden = YES;
-        [self.tableView setContentInset:UIEdgeInsetsMake(-delta,0,0,0)];
+        //float delta = self.searchBar.frame.size.height;
+        //self.searchBar.frame = CGRectOffset(self.searchBar.frame, 0.0, -delta);
+        //self.searchBar.hidden = YES;
+        //[self.tableView setContentInset:UIEdgeInsetsMake(-delta,0,0,0)];
+        self.tableView.tableHeaderView = nil;
+        
     }
     if(!_filteredObjects)
         _filteredObjects = [NSArray new];
@@ -118,6 +120,7 @@
             if([currentFilter isEqualToString:object[@"traumae"]]) {
                 cell = [self.tableView dequeueReusableCellWithIdentifier:@"DetailCell" forIndexPath:indexPath];
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
+                cell.backgroundColor = [UIColor blackColor];
                 UILabel* detailsTraumae = (UILabel*)[cell viewWithTag:100];
                 UIFont *font =[UIFont fontWithName:@"Septambres-Revisit" size:24];
                 detailsTraumae.font = font;
@@ -132,7 +135,7 @@
                     ((UILabel*)[cell viewWithTag:200]).text = [(NSArray*)object[@"englishWords"] componentsJoinedByString:@"\n"];
                     [((UILabel*)[cell viewWithTag:200]) sizeToFit];
                 }
-                [cell sizeToFit];
+                //[cell sizeToFit];
                 return cell;
             }
             
