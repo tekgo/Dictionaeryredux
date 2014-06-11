@@ -118,7 +118,8 @@
             if([currentFilter isEqualToString:object[@"traumae"]]) {
                 cell = [self.tableView dequeueReusableCellWithIdentifier:@"DetailCell" forIndexPath:indexPath];
                 UILabel* detailsTraumae = (UILabel*)[cell viewWithTag:100];
-                detailsTraumae.font = [UIFont fontWithName:@"Septambres-Revisit" size:24];
+                UIFont *font =[UIFont fontWithName:@"Septambres-Revisit" size:24];
+                detailsTraumae.font = font;
                 detailsTraumae.text = [self toQwerty:object[@"traumae"]];
                 
                 ((UILabel*)[cell viewWithTag:300]).text = object[@"traumae"];
@@ -131,8 +132,9 @@
                     [((UILabel*)[cell viewWithTag:200]) sizeToFit];
                 }
                 [cell sizeToFit];
-                
+                return cell;
             }
+            
             
         }
         
@@ -224,7 +226,7 @@
 
 #pragma mark Content Filtering
 -(void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope {
-    _filteredObjects = [[dictDataStore sharedDataStore] DataForSearch:searchText];
+    _filteredObjects = [[dictDataStore sharedDataStore] DataForSearch:[searchText lowercaseString]];
     /*
     // Update the filtered array based on the search text and scope.
     // Remove all objects from the filtered search array

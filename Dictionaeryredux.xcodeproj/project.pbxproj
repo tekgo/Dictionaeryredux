@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		58931CFC1947F8F800888967 /* septambres-fune.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58931CFA1947F8F800888967 /* septambres-fune.ttf */; };
 		58931CFD1947F8F800888967 /* Septambres-Revisit.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58931CFB1947F8F800888967 /* Septambres-Revisit.ttf */; };
 		58B197AB1947879000B9D9FA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58B197AA1947879000B9D9FA /* Foundation.framework */; };
 		58B197AD1947879100B9D9FA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58B197AC1947879100B9D9FA /* CoreGraphics.framework */; };
@@ -38,7 +37,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		58931CFA1947F8F800888967 /* septambres-fune.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "septambres-fune.ttf"; sourceTree = "<group>"; };
 		58931CFB1947F8F800888967 /* Septambres-Revisit.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Septambres-Revisit.ttf"; sourceTree = "<group>"; };
 		58B197A71947879000B9D9FA /* Dictionaeryredux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dictionaeryredux.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58B197AA1947879000B9D9FA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -137,7 +135,6 @@
 		58B197B11947879100B9D9FA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				58931CFA1947F8F800888967 /* septambres-fune.ttf */,
 				58931CFB1947F8F800888967 /* Septambres-Revisit.ttf */,
 				58B197E8194790D000B9D9FA /* dict.json */,
 				58B197B21947879100B9D9FA /* Dictionaeryredux-Info.plist */,
@@ -248,7 +245,6 @@
 				58B197BE1947879100B9D9FA /* Main_iPhone.storyboard in Resources */,
 				58931CFD1947F8F800888967 /* Septambres-Revisit.ttf in Resources */,
 				58B197B51947879100B9D9FA /* InfoPlist.strings in Resources */,
-				58931CFC1947F8F800888967 /* septambres-fune.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
