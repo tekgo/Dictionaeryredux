@@ -37,7 +37,7 @@
 {
 	NSURL *myURL = [NSURL URLWithString: @"http://api.xxiivv.com/?key=traumae" ];
 	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:myURL cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:60];
-	[[NSURLConnection alloc] initWithRequest:request delegate:self];
+	apiConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
@@ -103,8 +103,10 @@
     }
 }
 
-- (void) dictionaerySequenceFilter
-{   NSMutableDictionary *tempDict = [NSMutableDictionary new];
+
+- (void) dictionaerySequence :(NSDictionary*)nodeRaw
+{
+	NSMutableDictionary *tempDict = [NSMutableDictionary new];
     for (NSString* key in nodeRaw) {
         id value = [nodeRaw objectForKey:key];
         NSString *englishval = @"";
@@ -136,15 +138,12 @@
             [tempDict setObject:tempVal forKey:key];
         }
     }
-	nodeDict = tempDict;//[self dictionaerySequenceFilterLoop];
+	nodeDict = tempDict;
 }
 
-- (void) dictionaerySequence :(NSDictionary*)sequence
-{
-	nodeRaw = sequence;
-    //	[self dictionaeryTypesColoursCreate:sequence];
-	[self dictionaerySequenceFilter];
-}
+// ------------------------
+#  pragma mark Search Functions
+// ------------------------
 
 
 - (NSArray*) DataforFilter:(NSString*)filter maxLength:(int)length {
@@ -224,7 +223,6 @@
             }
             if(!added && [(NSString*)value[@"engSearchString"]  rangeOfString:searchString].location != NSNotFound) {
                 [tempArrays[2] addObject:value];
-                added=true;
             }
             
         }
@@ -238,6 +236,10 @@
     
     return tempArray;
 }
+
+// ------------------------
+#  pragma mark Traumae Functions
+// ------------------------
 
 - (NSString*) toNumeric :(NSString*)traumae //Changes traumae to a numeric form for sorting.
 {

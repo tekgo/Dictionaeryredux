@@ -12,16 +12,10 @@
 {
     NSMutableData *receivedData;
     NSMutableData *responseData;
-    NSMutableDictionary *dict;
-    NSMutableDictionary *dicttype;
     
-    NSDictionary *nodeRaw;
     NSDictionary *nodeDict;
-    NSDictionary *nodeDictFiltered;
     
-    
-    NSMutableArray *dictlist;
-    NSArray *dictPerm;
+    NSURLConnection* apiConnection;
 }
 + (id)sharedDataStore;
 

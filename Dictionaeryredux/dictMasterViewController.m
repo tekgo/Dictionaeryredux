@@ -26,24 +26,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    //self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-    //UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    //self.navigationItem.rightBarButtonItem = addButton;
-    if(!_objects)
+    if(!_objects) {
         _objects = [[dictDataStore sharedDataStore] DataforFilter:Nil maxLength:2];
+    }
     else
     {
-        //float delta = self.searchBar.frame.size.height;
-        //self.searchBar.frame = CGRectOffset(self.searchBar.frame, 0.0, -delta);
-        //self.searchBar.hidden = YES;
-        //[self.tableView setContentInset:UIEdgeInsetsMake(-delta,0,0,0)];
+
         self.tableView.tableHeaderView = nil;
         
     }
-    if(!_filteredObjects)
+    if(!_filteredObjects) {
         _filteredObjects = [NSArray new];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -147,11 +142,7 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         
         
-        
-        /*if([object[@"children"] intValue] == 0) {
-            cell.selectionStyle = UITableViewCellSelectionStyleNone;
-            cell.accessoryType = UITableViewCellAccessoryNone;
-        }*/
+    
         
     }
     
@@ -218,10 +209,6 @@
         [self setTitle:[filter capitalizedString]];
         currentFilter = filter;
         [self.tableView reloadData];
-        //self.searchBar.hidden=true;
-        /*if(_objects.count==1) {
-            self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        }*/
     }
 }
 
