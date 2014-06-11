@@ -17,24 +17,9 @@
 		58B197BE1947879100B9D9FA /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58B197BC1947879100B9D9FA /* Main_iPhone.storyboard */; };
 		58B197C41947879100B9D9FA /* dictMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B197C31947879100B9D9FA /* dictMasterViewController.m */; };
 		58B197C91947879100B9D9FA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58B197C81947879100B9D9FA /* Images.xcassets */; };
-		58B197D01947879100B9D9FA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58B197CF1947879100B9D9FA /* XCTest.framework */; };
-		58B197D11947879100B9D9FA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58B197AA1947879000B9D9FA /* Foundation.framework */; };
-		58B197D21947879100B9D9FA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58B197AE1947879100B9D9FA /* UIKit.framework */; };
-		58B197DA1947879100B9D9FA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58B197D81947879100B9D9FA /* InfoPlist.strings */; };
-		58B197DC1947879100B9D9FA /* DictionaeryplusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B197DB1947879100B9D9FA /* DictionaeryplusTests.m */; };
 		58B197E71947906E00B9D9FA /* dictDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B197E61947906E00B9D9FA /* dictDataStore.m */; };
 		58B197E9194790D000B9D9FA /* dict.json in Resources */ = {isa = PBXBuildFile; fileRef = 58B197E8194790D000B9D9FA /* dict.json */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		58B197D31947879100B9D9FA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 58B1979F1947879000B9D9FA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 58B197A61947879000B9D9FA;
-			remoteInfo = Dictionaeryplus;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		58931CFB1947F8F800888967 /* Septambres-Revisit.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Septambres-Revisit.ttf"; sourceTree = "<group>"; };
@@ -52,11 +37,7 @@
 		58B197C21947879100B9D9FA /* dictMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dictMasterViewController.h; sourceTree = "<group>"; };
 		58B197C31947879100B9D9FA /* dictMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dictMasterViewController.m; sourceTree = "<group>"; };
 		58B197C81947879100B9D9FA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		58B197CE1947879100B9D9FA /* DictionaeryreduxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DictionaeryreduxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		58B197CF1947879100B9D9FA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		58B197D71947879100B9D9FA /* DictionaeryreduxTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DictionaeryreduxTests-Info.plist"; sourceTree = "<group>"; };
-		58B197D91947879100B9D9FA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		58B197DB1947879100B9D9FA /* DictionaeryplusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DictionaeryplusTests.m; sourceTree = "<group>"; };
 		58B197E51947906E00B9D9FA /* dictDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dictDataStore.h; sourceTree = "<group>"; };
 		58B197E61947906E00B9D9FA /* dictDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dictDataStore.m; sourceTree = "<group>"; };
 		58B197E8194790D000B9D9FA /* dict.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dict.json; sourceTree = "<group>"; };
@@ -73,16 +54,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		58B197CB1947879100B9D9FA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				58B197D01947879100B9D9FA /* XCTest.framework in Frameworks */,
-				58B197D21947879100B9D9FA /* UIKit.framework in Frameworks */,
-				58B197D11947879100B9D9FA /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -90,7 +61,6 @@
 			isa = PBXGroup;
 			children = (
 				58B197B01947879100B9D9FA /* Dictionaeryredux */,
-				58B197D51947879100B9D9FA /* DictionaeryreduxTests */,
 				58B197A91947879000B9D9FA /* Frameworks */,
 				58B197A81947879000B9D9FA /* Products */,
 			);
@@ -100,7 +70,6 @@
 			isa = PBXGroup;
 			children = (
 				58B197A71947879000B9D9FA /* Dictionaeryredux.app */,
-				58B197CE1947879100B9D9FA /* DictionaeryreduxTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -145,24 +114,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		58B197D51947879100B9D9FA /* DictionaeryreduxTests */ = {
-			isa = PBXGroup;
-			children = (
-				58B197DB1947879100B9D9FA /* DictionaeryplusTests.m */,
-				58B197D61947879100B9D9FA /* Supporting Files */,
-			);
-			path = DictionaeryreduxTests;
-			sourceTree = "<group>";
-		};
-		58B197D61947879100B9D9FA /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				58B197D71947879100B9D9FA /* DictionaeryreduxTests-Info.plist */,
-				58B197D81947879100B9D9FA /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -183,24 +134,6 @@
 			productReference = 58B197A71947879000B9D9FA /* Dictionaeryredux.app */;
 			productType = "com.apple.product-type.application";
 		};
-		58B197CD1947879100B9D9FA /* DictionaeryreduxTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 58B197E21947879100B9D9FA /* Build configuration list for PBXNativeTarget "DictionaeryreduxTests" */;
-			buildPhases = (
-				58B197CA1947879100B9D9FA /* Sources */,
-				58B197CB1947879100B9D9FA /* Frameworks */,
-				58B197CC1947879100B9D9FA /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				58B197D41947879100B9D9FA /* PBXTargetDependency */,
-			);
-			name = DictionaeryreduxTests;
-			productName = DictionaeryplusTests;
-			productReference = 58B197CE1947879100B9D9FA /* DictionaeryreduxTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -210,11 +143,6 @@
 				CLASSPREFIX = dict;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Patrick Winchell";
-				TargetAttributes = {
-					58B197CD1947879100B9D9FA = {
-						TestTargetID = 58B197A61947879000B9D9FA;
-					};
-				};
 			};
 			buildConfigurationList = 58B197A21947879000B9D9FA /* Build configuration list for PBXProject "Dictionaeryredux" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -230,7 +158,6 @@
 			projectRoot = "";
 			targets = (
 				58B197A61947879000B9D9FA /* Dictionaeryredux */,
-				58B197CD1947879100B9D9FA /* DictionaeryreduxTests */,
 			);
 		};
 /* End PBXProject section */
@@ -248,14 +175,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		58B197CC1947879100B9D9FA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				58B197DA1947879100B9D9FA /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -270,23 +189,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		58B197CA1947879100B9D9FA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				58B197DC1947879100B9D9FA /* DictionaeryplusTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		58B197D41947879100B9D9FA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 58B197A61947879000B9D9FA /* Dictionaeryredux */;
-			targetProxy = 58B197D31947879100B9D9FA /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		58B197B31947879100B9D9FA /* InfoPlist.strings */ = {
@@ -303,14 +206,6 @@
 				58B197BD1947879100B9D9FA /* Base */,
 			);
 			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		58B197D81947879100B9D9FA /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				58B197D91947879100B9D9FA /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -416,46 +311,6 @@
 			};
 			name = Release;
 		};
-		58B197E31947879100B9D9FA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Dictionaeryredux.app/Dictionaeryredux";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Dictionaeryredux/Dictionaeryredux-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "DictionaeryplusTests/DictionaeryreduxTests-Info.plist";
-				PRODUCT_NAME = DictionaeryreduxTests;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		58B197E41947879100B9D9FA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Dictionaeryredux.app/Dictionaeryredux";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Dictionaeryredux/Dictionaeryredux-Prefix.pch";
-				INFOPLIST_FILE = "DictionaeryplusTests/DictionaeryreduxTests-Info.plist";
-				PRODUCT_NAME = DictionaeryreduxTests;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -473,15 +328,6 @@
 			buildConfigurations = (
 				58B197E01947879100B9D9FA /* Debug */,
 				58B197E11947879100B9D9FA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		58B197E21947879100B9D9FA /* Build configuration list for PBXNativeTarget "DictionaeryreduxTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				58B197E31947879100B9D9FA /* Debug */,
-				58B197E41947879100B9D9FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
