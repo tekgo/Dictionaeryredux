@@ -139,6 +139,7 @@
         }
     }
 	nodeDict = tempDict;
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"dictDataStoreUpdate" object:self];
 }
 
 // ------------------------

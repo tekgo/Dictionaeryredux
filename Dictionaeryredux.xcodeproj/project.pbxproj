@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		58931CFD1947F8F800888967 /* Septambres-Revisit.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58931CFB1947F8F800888967 /* Septambres-Revisit.ttf */; };
+		58ABC6E0194BAEE3004232D6 /* dictDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B197E61947906E00B9D9FA /* dictDataStore.m */; };
+		58ABC6E1194BB098004232D6 /* dict.json in Resources */ = {isa = PBXBuildFile; fileRef = 58B197E8194790D000B9D9FA /* dict.json */; };
 		58B197AB1947879000B9D9FA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58B197AA1947879000B9D9FA /* Foundation.framework */; };
 		58B197AD1947879100B9D9FA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58B197AC1947879100B9D9FA /* CoreGraphics.framework */; };
 		58B197AF1947879100B9D9FA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58B197AE1947879100B9D9FA /* UIKit.framework */; };
@@ -19,6 +21,13 @@
 		58B197C91947879100B9D9FA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58B197C81947879100B9D9FA /* Images.xcassets */; };
 		58B197E71947906E00B9D9FA /* dictDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B197E61947906E00B9D9FA /* dictDataStore.m */; };
 		58B197E9194790D000B9D9FA /* dict.json in Resources */ = {isa = PBXBuildFile; fileRef = 58B197E8194790D000B9D9FA /* dict.json */; };
+		58C31BA2194B7B58006FFA5C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58C31BA1194B7B58006FFA5C /* Cocoa.framework */; };
+		58C31BAC194B7B58006FFA5C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58C31BAA194B7B58006FFA5C /* InfoPlist.strings */; };
+		58C31BAE194B7B58006FFA5C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C31BAD194B7B58006FFA5C /* main.m */; };
+		58C31BB2194B7B58006FFA5C /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 58C31BB0194B7B58006FFA5C /* Credits.rtf */; };
+		58C31BB5194B7B58006FFA5C /* dictAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C31BB4194B7B58006FFA5C /* dictAppDelegate.m */; };
+		58C31BB8194B7B58006FFA5C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58C31BB6194B7B58006FFA5C /* MainMenu.xib */; };
+		58C31BBA194B7B58006FFA5C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58C31BB9194B7B58006FFA5C /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +50,20 @@
 		58B197E51947906E00B9D9FA /* dictDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dictDataStore.h; sourceTree = "<group>"; };
 		58B197E61947906E00B9D9FA /* dictDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dictDataStore.m; sourceTree = "<group>"; };
 		58B197E8194790D000B9D9FA /* dict.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dict.json; sourceTree = "<group>"; };
+		58C31BA0194B7B58006FFA5C /* DictionaeryMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DictionaeryMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		58C31BA1194B7B58006FFA5C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		58C31BA4194B7B58006FFA5C /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		58C31BA5194B7B58006FFA5C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		58C31BA6194B7B58006FFA5C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		58C31BA9194B7B58006FFA5C /* DictionaeryMac-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DictionaeryMac-Info.plist"; sourceTree = "<group>"; };
+		58C31BAB194B7B58006FFA5C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		58C31BAD194B7B58006FFA5C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		58C31BAF194B7B58006FFA5C /* DictionaeryMac-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DictionaeryMac-Prefix.pch"; sourceTree = "<group>"; };
+		58C31BB1194B7B58006FFA5C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		58C31BB3194B7B58006FFA5C /* dictAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dictAppDelegate.h; sourceTree = "<group>"; };
+		58C31BB4194B7B58006FFA5C /* dictAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dictAppDelegate.m; sourceTree = "<group>"; };
+		58C31BB7194B7B58006FFA5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		58C31BB9194B7B58006FFA5C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +77,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		58C31B9D194B7B58006FFA5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58C31BA2194B7B58006FFA5C /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -61,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				58B197B01947879100B9D9FA /* Dictionaeryredux */,
+				58C31BA7194B7B58006FFA5C /* DictionaeryMac */,
 				58B197A91947879000B9D9FA /* Frameworks */,
 				58B197A81947879000B9D9FA /* Products */,
 			);
@@ -70,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				58B197A71947879000B9D9FA /* Dictionaeryredux.app */,
+				58C31BA0194B7B58006FFA5C /* DictionaeryMac.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -81,6 +114,8 @@
 				58B197AC1947879100B9D9FA /* CoreGraphics.framework */,
 				58B197AE1947879100B9D9FA /* UIKit.framework */,
 				58B197CF1947879100B9D9FA /* XCTest.framework */,
+				58C31BA1194B7B58006FFA5C /* Cocoa.framework */,
+				58C31BA3194B7B58006FFA5C /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -114,6 +149,40 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		58C31BA3194B7B58006FFA5C /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				58C31BA4194B7B58006FFA5C /* AppKit.framework */,
+				58C31BA5194B7B58006FFA5C /* CoreData.framework */,
+				58C31BA6194B7B58006FFA5C /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		58C31BA7194B7B58006FFA5C /* DictionaeryMac */ = {
+			isa = PBXGroup;
+			children = (
+				58C31BB3194B7B58006FFA5C /* dictAppDelegate.h */,
+				58C31BB4194B7B58006FFA5C /* dictAppDelegate.m */,
+				58C31BB6194B7B58006FFA5C /* MainMenu.xib */,
+				58C31BB9194B7B58006FFA5C /* Images.xcassets */,
+				58C31BA8194B7B58006FFA5C /* Supporting Files */,
+			);
+			path = DictionaeryMac;
+			sourceTree = "<group>";
+		};
+		58C31BA8194B7B58006FFA5C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				58C31BA9194B7B58006FFA5C /* DictionaeryMac-Info.plist */,
+				58C31BAA194B7B58006FFA5C /* InfoPlist.strings */,
+				58C31BAD194B7B58006FFA5C /* main.m */,
+				58C31BAF194B7B58006FFA5C /* DictionaeryMac-Prefix.pch */,
+				58C31BB0194B7B58006FFA5C /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,6 +201,23 @@
 			name = Dictionaeryredux;
 			productName = Dictionaeryplus;
 			productReference = 58B197A71947879000B9D9FA /* Dictionaeryredux.app */;
+			productType = "com.apple.product-type.application";
+		};
+		58C31B9F194B7B58006FFA5C /* DictionaeryMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 58C31BD0194B7B59006FFA5C /* Build configuration list for PBXNativeTarget "DictionaeryMac" */;
+			buildPhases = (
+				58C31B9C194B7B58006FFA5C /* Sources */,
+				58C31B9D194B7B58006FFA5C /* Frameworks */,
+				58C31B9E194B7B58006FFA5C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DictionaeryMac;
+			productName = DictionaeryMac;
+			productReference = 58C31BA0194B7B58006FFA5C /* DictionaeryMac.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -158,6 +244,7 @@
 			projectRoot = "";
 			targets = (
 				58B197A61947879000B9D9FA /* Dictionaeryredux */,
+				58C31B9F194B7B58006FFA5C /* DictionaeryMac */,
 			);
 		};
 /* End PBXProject section */
@@ -175,6 +262,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		58C31B9E194B7B58006FFA5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58C31BAC194B7B58006FFA5C /* InfoPlist.strings in Resources */,
+				58C31BBA194B7B58006FFA5C /* Images.xcassets in Resources */,
+				58C31BB2194B7B58006FFA5C /* Credits.rtf in Resources */,
+				58ABC6E1194BB098004232D6 /* dict.json in Resources */,
+				58C31BB8194B7B58006FFA5C /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -186,6 +285,16 @@
 				58B197E71947906E00B9D9FA /* dictDataStore.m in Sources */,
 				58B197BB1947879100B9D9FA /* dictAppDelegate.m in Sources */,
 				58B197B71947879100B9D9FA /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58C31B9C194B7B58006FFA5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58C31BB5194B7B58006FFA5C /* dictAppDelegate.m in Sources */,
+				58ABC6E0194BAEE3004232D6 /* dictDataStore.m in Sources */,
+				58C31BAE194B7B58006FFA5C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +315,30 @@
 				58B197BD1947879100B9D9FA /* Base */,
 			);
 			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		58C31BAA194B7B58006FFA5C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				58C31BAB194B7B58006FFA5C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		58C31BB0194B7B58006FFA5C /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				58C31BB1194B7B58006FFA5C /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		58C31BB6194B7B58006FFA5C /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				58C31BB7194B7B58006FFA5C /* Base */,
+			);
+			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -311,6 +444,51 @@
 			};
 			name = Release;
 		};
+		58C31BCC194B7B59006FFA5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DictionaeryMac/DictionaeryMac-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "DictionaeryMac/DictionaeryMac-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		58C31BCD194B7B59006FFA5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DictionaeryMac/DictionaeryMac-Prefix.pch";
+				INFOPLIST_FILE = "DictionaeryMac/DictionaeryMac-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -328,6 +506,15 @@
 			buildConfigurations = (
 				58B197E01947879100B9D9FA /* Debug */,
 				58B197E11947879100B9D9FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		58C31BD0194B7B59006FFA5C /* Build configuration list for PBXNativeTarget "DictionaeryMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58C31BCC194B7B59006FFA5C /* Debug */,
+				58C31BCD194B7B59006FFA5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

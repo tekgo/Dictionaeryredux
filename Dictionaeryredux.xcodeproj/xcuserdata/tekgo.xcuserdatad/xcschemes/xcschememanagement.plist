@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>DictionaeryMac.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>Dictionaeryredux.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -18,6 +23,16 @@
 			<true/>
 		</dict>
 		<key>58B197CD1947879100B9D9FA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>58C31B9F194B7B58006FFA5C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>58C31BBE194B7B58006FFA5C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

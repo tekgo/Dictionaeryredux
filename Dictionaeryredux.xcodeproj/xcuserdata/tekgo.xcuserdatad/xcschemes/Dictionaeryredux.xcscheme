@@ -38,6 +38,16 @@
                ReferencedContainer = "container:Dictionaeryredux.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "58C31BBE194B7B58006FFA5C"
+               BuildableName = "DictionaeryMacTests.xctest"
+               BlueprintName = "DictionaeryMacTests"
+               ReferencedContainer = "container:Dictionaeryredux.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
