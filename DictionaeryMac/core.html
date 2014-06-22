@@ -1,0 +1,662 @@
+<html>
+    <head>
+        <style>
+            /*-------------------/
+             @ Reset
+             /-------------------*/
+        
+        *           { margin:0;padding:0;border:0;outline:0;text-decoration:none;font-weight:inherit;font-style:inherit;color:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;list-style:none;border-collapse:separate;border-spacing:0;}
+        *:focus         { outline: none}
+        ::selection       { background: #eee; opacity:1.0; color:#000; padding:10px; /* Safari */ }
+        
+        @font-face {
+            font-family: 'dinbold';
+            src: url('din_bold-webfont.eot');
+            src: url('http://core.xxiivv.com/fonts/din_bold-webfont.eot?#iefix') format('embedded-opentype'),
+            url('http://core.xxiivv.com/fonts/din_bold-webfont.woff') format('woff'),
+            url('http://core.xxiivv.com/fonts/din_bold-webfont.ttf') format('truetype'),
+            url('http://core.xxiivv.com/fonts/din_bold-webfont.svg#dinbold') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            
+        }
+        
+        @font-face {
+            font-family: 'din_lightregular';
+            src: url('din_light-webfont.eot');
+            src: url('http://core.xxiivv.com/fonts/din_light-webfont.eot?#iefix') format('embedded-opentype'),
+            url('http://core.xxiivv.com/fonts/din_light-webfont.woff') format('woff'),
+            url('http://core.xxiivv.com/fonts/din_light-webfont.ttf') format('truetype'),
+            url('http://core.xxiivv.com/fonts/din_light-webfont.svg#din_lightregular') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            
+        }
+        
+        @font-face {
+            font-family: 'din_mediumregular';
+            src: url('din_medium-webfont.eot');
+            src: url('http://core.xxiivv.com/fonts/din_medium-webfont.eot?#iefix') format('embedded-opentype'),
+            url('http://core.xxiivv.com/fonts/din_medium-webfont.woff') format('woff'),
+            url('http://core.xxiivv.com/fonts/din_medium-webfont.ttf') format('truetype'),
+            url('http://core.xxiivv.com/fonts/din_medium-webfont.svg#din_mediumregular') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            
+        }
+        
+        @font-face {
+            font-family: 'dinregular';
+            src: url('din-webfont.eot');
+            src: url('http://core.xxiivv.com/fonts/din-webfont.eot?#iefix') format('embedded-opentype'),
+            url('http://core.xxiivv.com/fonts/din-webfont.woff') format('woff'),
+            url('http://core.xxiivv.com/fonts/din-webfont.ttf') format('truetype'),
+            url('http://core.xxiivv.com/fonts/din-webfont.svg#dinregular') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            
+        }
+            </style>
+        <style>
+            /*-------------------/
+             @ HTML
+             /-------------------*/
+        
+        html { height: 100%; height:100%; background:#efefef; font-family: 'Baskerville', 'Garamond', 'georgia', 'Times'; font-size:16px;}
+        body { margin:0px auto;}
+        img { max-width: 100%}
+        b { font-weight: bold;}
+        i { font-family: 'Baskerville', 'Garamond', georgia, times; font-style: italic}
+        c { display: block; text-align: center; margin-bottom: 30px}
+        hr { border:0px; clear:both;}
+        hr.spacer { height:3px;background:#ddd;width:30%;margin:20px auto;display: block;}
+        iframe { margin-bottom: 30px}
+        table { margin-bottom:30px;border:0px; border-collapse: collapse; max-width:100%; font-family: 'dinregular';}
+        table tr b { font-family: 'dinbold'; font-weight: normal;}
+        table tr td { padding: 7px;border: 1px solid #eee;line-height: 16px;background:#fff;font-size:14px}
+        table tr td:hover { background:#fff;}
+        table tr th { font-size: 12px;padding: 10px;border: 1px solid #eee;line-height: 16px;background: #f9f9f9;}
+        table tr a { font-weight: normal; font-family: 'dinbold';}
+        table tr a:hover { border-bottom: 0px !important; text-decoration: underline;}
+        column { display: block; height:100%;float: left;}
+        wrapper { display: block}
+        column wrapper { padding-top:100px; display: block}
+        content { display: block;max-width: 640px; margin:0px auto;}
+        .right { float: right !important}
+        .left { float: left !important}
+        .bgclear { background:none;}
+        .clear { clear: both;}
+        .grey { color:#bbb;}
+        
+        /* ===============
+         @ HEADER
+         =============== */
+        
+        content.header { max-width:100%; overflow: hidden; margin-bottom:60px;min-height:100px;background: #aaa}
+        
+        content.header content.logo { position: absolute;left:0px;z-index: 900;}
+        content.header content.logo a { display: inline-block;background-image: url(../img/interface/logo_xxiivv_white.png);width: 150px;height: 40px;background-size: cover;border: 0px; text-indent: -9999px; position: absolute;top:30px;left:30px}
+        
+        content.header content.photo { background-size: cover; max-width: 100%; background-position: center center}
+        
+        content.header content.navi { color:#fff;position: absolute;left:210px;top:30px}
+        content.header content.navi h1 { font-family: 'dinregular';font-size:13px;line-height: 32px;border-left: 1px solid rgba(255,255,255,0.1);text-indent: 30px}
+        content.header content.navi h1 a { font-family: 'dinbold'; font-weight: normal;}
+        
+        content.header content.search { position: absolute; right:30px; top:30px;}
+        content.header content.search input { padding: 5px 5px;text-align: right;background: #111;border-radius: 100px;padding-right: 10px;text-transform: capitalize;font-size: 11px;font-family: 'dinregular';margin-top:5px}
+        
+        html.mobile content.header content.search { display: none}
+        
+        /* ===============
+         @ CORE
+         =============== */
+        
+        content.core { line-height: 34px;font-size: 20px;position: relative;margin-bottom: 30px;}
+        content.core.left wrapper { padding-left:0px;}
+        content.core.right wrapper { padding-right:0px;}
+        content.core.page { clear:both; width:auto;}
+        content.core.page wrapper { padding:0px;}
+        content.core p { margin-bottom: 30px;}
+        content.core p.small { font-size: 14px;line-height: 20px; text-align: justify;}
+        content.core p.small a { line-height: 14px}
+        content.core a { line-height: 19px;display: inline-block;border-bottom: 1px solid #ccc;}
+        content.core a.dead { border-bottom: 1px dotted #000;}
+        content.core a:hover { border-bottom: 1px solid #000}
+        content.core h1 { letter-spacing: -1px;margin-bottom: 30px;font-weight: 100;font-size: 40px; line-height: 40px}
+        content.core h1 small { font-size:14px;display: block;letter-spacing: 0px;line-height: 14px;}
+        content.core h1 small a { border:0px;}
+        content.core h2 { margin-bottom: 30px;font-weight: 100;font-size: 24px;}
+        content.core h2 small { display: block;font-size:12px;font-family: 'dinregular';color:#999; padding-top:5px;}
+        content.core h2 small a { color:#000;}
+        content.core h3 { margin-bottom: 10px;font-weight: 100;font-size: 14px; text-transform: uppercase;}
+        content.core h3 small { display: block;font-size:14px;font-family: 'dinregular';color:#999;letter-spacing: 0px;}
+        content.core h4 { display: block;font-size:14px;font-family: 'dinbold';color:#000;letter-spacing: 0px;margin-bottom: 30px;}
+        content.core ul { margin-bottom: 30px;color: #999;font-family: 'dinregular';}
+        content.core ul li a { font-size: 12px;line-height: 24px;color: #000;text-transform: uppercase;display: block;border-bottom: 0px;background-image: url(/img/interface/icn.arrow_right.png);background-repeat: no-repeat;background-position: 0px 6px;padding-left:15px;}
+        content.core ul li a:hover { border-bottom: 0px; text-decoration: underline;}
+        content.core ul li a b {font-family: 'dinbold'; font-weight: normal}
+        content.core ul.column li { width:100px; display: block; float:left;}
+        
+        content.core img { margin-bottom: 30px}
+        content.core pre { background: #fff;padding: 15px;color: #111;font-family: monaco,courier;font-size: 12px;line-height: 16px;margin-bottom: 30px;border-radius: 4px}
+        content.core small { clear:both; display: block; font-size: 12px; line-height: 18px; font-family: 'dinregular'; color:#999;}
+        content.core small a { border:0px; font-family: 'dinbold'; font-weight: normal;}
+        
+        html.mobile content.core { width: auto;clear: both;padding:0px 30px; font-size:16px;line-height: 28px}
+        
+        content.footer { font-size: 12px; line-height: 18px; padding-bottom: 100px; font-family: 'dinregular'; padding-top:60px; clear: both}
+        content.footer b {font-family: 'dinbold'; font-weight: normal; }
+        content.footer dl { width:25%; display: inline-block; float:left; border-top: 1px solid #ccc; padding-top:30px; color:#999;}
+        content.footer dl dt { font-weight: normal;font-family: 'dinregular';font-size: 13px;line-height: 34px; color: #aaa}
+        content.footer a { border-bottom: 0px; color:#000;font-family: 'dinregular'; font-weight: normal;}
+        content.footer a:hover {border-bottom: 1px solid #000}
+        
+        html.mobile content.footer dl { width: auto;clear: both;float: none;display: block;padding:30px}
+        
+        content.album { width:190px; height:260px; background:white; border-radius: 10px; float:left; margin-right:10px; margin-bottom:10px; background-size: cover; background-position: center center}
+        content.album { position: relative;}
+        content.album h2 { position: absolute;bottom: 15px;left: 15px;color: white;margin-bottom: 0px;display: block;width:160px;overflow:hidden;}
+        content.album h2 a { border-bottom: 0px; line-height:28px;}
+        content.album h2 a:hover { border-bottom: 0px}
+        content.album h2 small { letter-spacing: 0px}
+        
+        content.diary { font-size: 12px; line-height: 18px; font-family: 'dinregular';}
+        content.diary a img { display: block !important;}
+        content.diary p { padding:15px 0px;}
+        content.diary p a { font-family: 'dinbold'; }
+        content.diary p a:hover { border-bottom: 1px solid #ccc}
+        content.diary p span { float:right;}
+        
+        content.diary log { display: block;line-height: 30px;border-bottom:1px solid #ccc}
+        content.diary log a { font-weight: normal; font-family: 'dinbold'; border-bottom: 0px !important}
+        
+        
+        table.clean { border:0px;}
+        table.clean tr td { border:0px; text-align: center; font-size:12px; padding:0px; vertical-align: top}
+        table.clean tr th { border:0px; background: none; color:#777;}
+        
+
+            </style>
+        </head>
+    
+    <body>
+        <content>
+            <content class="core">
+                <wrapper>
+                    <p>Created in 1998, <b>Traumae</b> is a <a href="http://en.wikipedia.org/wiki/Constructed_language">synthetic language</a> created by <a href="http://wiki.xxiivv.com/About">Devine Lu Linvega</a> for language processing experiments and research.</p>
+                    
+                    <style>
+                        .hint { background: #fff;border-radius: 5px;padding: 20px;margin:0px auto 30px;text-align:center;font-size:28px;line-height:28px}
+                        .hint span {display:inline-block}
+                        </style>
+                    
+                    <div class="hint"><span>ka(li)<br><small>inward + organicity</small></span> <span>&nbsp;<small>-&gt;</small></span> <span>kali<br><small>Female</small></span> <span>&nbsp;<small>-&gt;</small></span> <span>klai<br><small>Female, spelling</small></span></div>
+                    
+                    <p>The Traumae language has 27 root syllables, each associated to a core idea - combinable and specific, to make all permutations of its alphabet possible. Written from left to right with implicit neutrality, words and groups of word are both ruled by the same grammatical logics. And so, a single letter or a word will work as a function onto the succeeding pieces of the phrase.</p>
+                </wrapper>
+            </content>
+            <content class="core">
+                <wrapper>
+                    <h1>Content</h1>
+                    <p>This documentation is constantly being upgrated and may still contain mistakes.</p>
+                    <ul>
+                        <li><a href="#alphabet"><b>General</b></a></li>
+                        <li><a href="#alphabet">Alphabet</a></li>
+                        <li><a href="#alphabet">Pronouns</a></li>
+                        <li><a href="#alphabet">Verbs</a></li>
+                        <li><a href="#alphabet">Functions</a></li>
+                        <li><a href="#alphabet">Syntax</a></li>
+                        <li><a href="#alphabet"><b>Lessons</b></a></li>
+                        <li><a href="#alphabet"><b>Notes</b></a></li>
+                    </ul>
+                    
+                </wrapper>
+            </content>
+            <content class="core page">
+                <wrapper>
+                    
+                    <h2 id="alphabet">The Alphabet</h2>
+                    <p>It wouldn't be wrong to assume that traumae has 27 core words, and to learn these few concepts should be enough to guess at what a new word might mean. In practice, the relationship between sounds and meanings can become very blurry, it is good to rely on both memory and logic while learning traumae.</p>
+                    <table style="float:right; margin-left:30px">
+                        <tbody><tr><th colspan="2">Traversing</th><th colspan="2">State</th><th colspan="2">Origin</th></tr>
+                            
+                            <tr>
+                                <td>ki</td>
+                                <td>parent</td>
+                                <td>xi</td>
+                                <td>psychology</td>
+                                <td>si</td>
+                                <td>complexity</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>ti</td>
+                                <td>instance</td>
+                                <td>di</td>
+                                <td>physiognomy</td>
+                                <td>li</td>
+                                <td>organicity</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>pi</td>
+                                <td>children</td>
+                                <td>bi</td>
+                                <td>physicality</td>
+                                <td>vi</td>
+                                <td>syntheticity</td>
+                            </tr>
+                            
+                            <tr><th colspan="2">Direction</th><th colspan="2">Transformation</th><th colspan="2">Counters</th></tr>
+                            
+                            <tr>
+                                <td>ka</td>
+                                <td>inwardness</td>
+                                <td>xa</td>
+                                <td>addition</td>
+                                <td>sa</td>
+                                <td>multiplicity</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>ta</td>
+                                <td>inanimate</td>
+                                <td>da</td>
+                                <td>equality</td>
+                                <td>la</td>
+                                <td>uniqueness</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>pa</td>
+                                <td>outwardness</td>
+                                <td>ba</td>
+                                <td>subtraction</td>
+                                <td>va</td>
+                                <td>noneness</td>
+                            </tr>
+                            
+                            <tr><th colspan="2">Modality</th><th colspan="2">Alignment</th><th colspan="2">Interaction</th></tr>
+                            
+                            <tr>
+                                <td>ko</td>
+                                <td>impossibility</td>
+                                <td>xo</td>
+                                <td>positivity</td>
+                                <td>so</td>
+                                <td>communication</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>to</td>
+                                <td>possibility</td>
+                                <td>do</td>
+                                <td>unknown</td>
+                                <td>lo</td>
+                                <td>existance</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>po</td>
+                                <td>specificity</td>
+                                <td>bo</td>
+                                <td>negativity</td>
+                                <td>vo</td>
+                                <td>interaction</td>
+                            </tr>
+                            
+                        </tbody></table>
+                    
+                    <p>Similarly to how kanji compound words work, Traumae constructs are formed by combining letters from its alphabet. To give you a sense of the possibilities of Traumae, the following table will show you how to create many words stemming from the <a href="So">so</a> letter, in combination with the <a href="Ka">ka</a> letter.</p>
+                    
+                    <table>
+                        <tbody><tr><th></th><th colspan="2">ka</th><th colspan="2">ta</th><th colspan="2">pa</th></tr>
+                            <tr><th>so</th><td><a href="/Traumae:soka">soka</a></td><td>to observe</td><td><a href="/Traumae:sota">sota</a></td><td>to picture</td><td><a href="/Traumae:sopa">sopa</a></td><td>to show</td></tr>
+                            <tr><th>lo</th><td><a href="/Traumae:loka">loka</a></td><td>to enter</td><td><a href="/Traumae:lota">lota</a></td><td>to stay</td><td><a href="/Traumae:lopa">lopa</a></td><td>to leave</td></tr>
+                            <tr><th>vo</th><td><a href="/Traumae:voka">voka</a></td><td>to take</td><td><a href="/Traumae:vota">vota</a></td><td>to have</td><td><a href="/Traumae:vopa">vopa</a></td><td>to give</td></tr>
+                        </tbody></table>
+                    
+                    <p>A common difficulty with Traumae is to properly divide the words and to use the correct sequence of letter to express a specific concept - or which letter comes first in <a href="xoka">xoka</a>, why is it not <a href="kaxo">kaxo</a>.</p>
+                    
+                    <table><tbody><tr><th><a href="do">Do</a> <a href="loka">loka</a></th><td>is it entering?</td><th><a href="dolo">Dolo</a> <a href="ka">ka</a></th><td>who is coming?</td></tr></tbody></table>
+                    
+                    <h2>The Pronouns</h2>
+                    
+                    <p>Traumae's grammar is asexual and its pronouns are divided into four families and three persons, where "it"(indescript) is included in the third family.</p>
+                    
+                    <table>
+                        <tbody><tr>
+                            <th colspan="2">&nbsp;</th>
+                            <th colspan="2"><b>Nominative</b></th>
+                            <th colspan="2"><b>Oblique</b></th>
+                            <th colspan="2"><b>Genitive</b></th>
+                            <th colspan="2"><b>Possessive</b></th>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th>English</th>
+                            <th>traumae</th>
+                            <th>English</th>
+                            <th>traumae</th>
+                            <th>English</th>
+                            <th>traumae</th>
+                            <th>English</th>
+                            <th>traumae</th>
+                        </tr>
+                        <tr>
+                            <th rowspan="2"><b>1st person</b></th>
+                            <th><i>singular</i></th>
+                            <td>I</td><td>laka</td>
+                            <td>me</td><td>tilaka</td>
+                            <td>my</td><td>pilaka</td>
+                            <td>mine</td><td>tipilaka</td>
+                        </tr>
+                        <tr>
+                            <th><i>plural</i></th>
+                            <td>we</td><td>saka</td>
+                            <td>us</td><td>tisaka</td>
+                            <td>our</td><td>pisaka</td>
+                            <td>ours</td><td>tipisaka</td>
+                        </tr>
+                        <tr>
+                            <th rowspan="2"><b>2nd person</b></th>
+                            <th><i>singular</i></th>
+                            <td>you</td><td>lapa</td>
+                            <td>you</td><td>tilapa</td>
+                            <td>your</td><td>pilapa</td>
+                            <td>yours</td><td>tipilapa</td>
+                        </tr>
+                        <tr>
+                            <th><i>plural</i></th>
+                            <td>you</td><td>sapa</td>
+                            <td>you</td><td>tisapa</td>
+                            <td>your</td><td>pisapa</td>
+                            <td>yours</td><td>tipisapa</td>
+                        </tr>
+                        <tr>
+                            <th rowspan="2"><b>3rd person</b></th>
+                            <th><i>singular</i></th>
+                            <td>he/she</td><td>lata</td>
+                            <td>them</td><td>tilata</td>
+                            <td>their</td><td>pilata</td>
+                            <td>theirs</td><td>tipilata</td>
+                        </tr>
+                        <tr>
+                            <th><i>plural</i></th>
+                            <td>they</td><td>sata</td>
+                            <td>them</td><td>tisata</td>
+                            <td>their</td><td>pisata</td>
+                            <td>theirs</td><td>tipisata</td>
+                        </tr>
+                        </tbody></table>
+                    
+                    <h2 id="verbs">The Verbs</h2>
+                    
+                    <p>The following table shows the permutations of tenses and modality of traumae.</p>
+                    
+                    <table>
+                        <tbody><tr><th>Tense</th><th colspan="2"><b>Past</b></th><th colspan="2"><b>Present</b></th><th colspan="2"><b>Future</b></th></tr>
+                            
+                            <tr>
+                                <th></th>
+                                <th>English</th>
+                                <th>traumae</th>
+                                <th>English</th>
+                                <th>traumae</th>
+                                <th>English</th>
+                                <th>traumae</th>
+                            </tr>
+                            <tr><th rowspan="3"><b>Normal</b></th>
+                                <td>was thinking</td><td>tika so</td>
+                                <td>am thinking</td>   <td>tita so</td>
+                                <td>will be thinking</td> <td>tipa so</td></tr>
+                            <tr>
+                                <td>was being</td>   <td>tika lo</td>
+                                <td>am being</td>      <td>tita lo</td>
+                                <td>will be</td>    <td>tipa lo</td>
+                            </tr>
+                            <tr>
+                                <td>was doing</td>   <td>tika vo</td>
+                                <td>am doing</td>      <td>tita vo</td>
+                                <td>will be doing</td>    <td>tipa vo</td>
+                            </tr>
+                            
+                            <tr><th rowspan="3"><b>Impossible</b></th>
+                                <td>could not think</td><td>tika ko so</td>
+                                <td>cannot think</td>   <td>tita ko so</td>
+                                <td>will not think</td> <td>tipa ko so</td></tr>
+                            <tr>
+                                <td>could not be</td>   <td>tika ko lo</td>
+                                <td>cannot be</td>      <td>tita ko lo</td>
+                                <td>will not be</td>    <td>tipa ko lo</td>
+                            </tr>
+                            <tr>
+                                <td>could not do</td>   <td>tika ko vo</td>
+                                <td>cannot do</td>      <td>tita ko vo</td>
+                                <td>will not do</td>    <td>tipa ko vo</td>
+                            </tr>
+                            
+                            <tr><th rowspan="3"><b>Potential</b></th>
+                                <td>could think</td>    <td>tika to so</td>
+                                <td>can think</td>      <td>tita to so</td>
+                                <td>might think</td>    <td>tipa to so</td>
+                            </tr>
+                            <tr>
+                                <td>could be</td>           <td>tika to lo</td>
+                                <td>can be</td>             <td>tita to lo</td>
+                                <td>might be</td>           <td>tipa to lo</td>
+                            </tr>
+                            <tr>
+                                <td>could do</td>           <td>tika to vo</td>
+                                <td>can do</td>             <td>tita to vo</td>
+                                <td>might do</td>           <td>tipa to vo</td>
+                            </tr>
+                            
+                            <tr><th rowspan="3"><b>Certainty</b></th>
+                                <td>must have thought</td>  <td>tika to so</td>
+                                <td>must think</td>         <td>tita to so</td>
+                                <td>will have to think</td> <td>tipa to so</td>
+                            </tr>
+                            <tr>
+                                <td>must have been</td>     <td>tika po lo</td>
+                                <td>must be</td>            <td>tita po lo</td>
+                                <td>will have to be</td>    <td>tipa po lo</td>
+                            </tr>
+                            <tr><td>must have done</td>     <td>tika po vo</td>
+                                <td>must do</td>            <td>tita po vo</td>
+                                <td>will have to do</td>    <td>tipa po vo</td>
+                            </tr>
+                            
+                        </tbody></table>
+                    
+                    <h2 id="functions">The Functions</h2>
+                    
+                    <table>
+                        
+                        <tbody><tr><th>Type</th><th>Category</th><th>English</th><th>Traumae</th></tr>
+                            
+                            <tr><th rowspan="12">Prepositions</th><th rowspan="3">Spacial</th><td>over</td><td>ki</td></tr>
+                            <tr><td>at</td><td>ti</td></tr>
+                            <tr><td>under</td><td>pi</td></tr>
+                            
+                            <tr><th rowspan="3">Spacial Inward</th><td>on</td><td>kaki</td></tr>
+                            <tr><td>in</td><td>kati</td></tr>
+                            <tr><td>onto</td><td>kapi</td></tr>
+                            
+                            <tr><th rowspan="3">Spacial Stable</th><td>for</td><td>taki</td></tr>
+                            <tr><td>to</td><td>to</td></tr>
+                            <tr><td>by</td><td>tapi</td></tr>
+                            
+                            <tr><th rowspan="3">Spacial Outward</th><td>up</td><td>paki</td></tr>
+                            <tr><td>between</td><td>pati</td></tr>
+                            <tr><td>down</td><td>papi</td></tr>
+                            
+                            <tr><th rowspan="6">Determiners</th><th rowspan="3">Crementations</th><td>more</td><td>xa</td></tr>
+                            <tr><td>even</td><td>da</td></tr>
+                            <tr><td>less</td><td>ba</td></tr>
+                            
+                            <tr><th rowspan="3">Spacial relative</th><td>much/many</td><td>xalo</td></tr>
+                            <tr><td>fair</td><td>dalo</td></tr>
+                            <tr><td>few/little</td><td>balo</td></tr>
+                            
+                            <tr><th rowspan="9">Conjunctions</th><th rowspan="3">Temperal</th><td>after</td><td>kipasi</td></tr>
+                            <tr><td>now/while</td><td>tipasi</td></tr>
+                            <tr><td>before</td><td>pipasi</td></tr>
+                            
+                            <tr><th rowspan="3">Spacial relative</th><td>who</td><td>doxi</td></tr>
+                            <tr><td>which</td><td>dodi</td></tr>
+                            <tr><td>what</td><td>dobi</td></tr>
+                            
+                            <tr><th rowspan="3">Spacial relative</th><td>why</td><td>doso</td></tr>
+                            <tr><td>where</td><td>doti</td></tr>
+                            <tr><td>how</td><td>dovo</td></tr>
+                            
+                        </tbody></table>
+                    
+                    <h2 id="syntax">Syntax</h2>
+                    
+                    <p>Due to it's modular nature, resembling the one of a modeling language, the word order is not strictly following the SOV model. Similarly to the construction of words, sentences are but a higher level of abstraction following the same patterns as the words.
+                    Not unlike the construction of the word "<a href="poso">poso</a>" for <i>eyes</i> (po:for so:seeing), "<a href="vopa">vopa</a> <a href="poso">poso</a>" is the word vopa acting upon the word eyes - resulting in the construct of <i>giving eyes</i>.</p>
+                    
+                    <table class="alphabet normal">
+                        <tbody><tr>
+                            <th colspan="2"> Term</th>
+                            <th> Example</th>
+                            <th>Childspeak</th>
+                            <th>Adultspeak</th>
+                        </tr>
+                        <tr>
+                            <th colspan="2"> Subject</th>
+                            <td><b>The eyes</b> see you</td>
+                            <td><b>pоsо</b> sо kilа</td>
+                            <td><b>pso</b> so klia</td>
+                        </tr>
+                        <tr>
+                            <th colspan="2"> Verb</th>
+                            <td> You <b>see</b> the eyes</td>
+                            <td>kilа <b>sо</b> pоsо</td>
+                            <td>kliа <b>sо</b> psо</td>
+                        </tr>
+                        <tr>
+                            <th rowspan="2"> Object</th>
+                            <th> Direct</th>
+                            <td> I gave you <b>eyes</b></td>
+                            <td>vopa kilа <b>pоsо</b></td>
+                            <td>vopa kliа <b>psо</b></td>
+                        </tr>
+                        <tr>
+                            <th> Indirect</th>
+                            <td> I gave <b>you</b> eyes</td>
+                            <td>vopa <b>kilа</b> pоsо</td>
+                            <td>vopa <b>kliа</b> psо</td>
+                        </tr>
+                        </tbody></table>
+                    
+                    <hr class="spacer">
+                    <h1>Lessons</h1><p>This is a draft for a few <a href="Traumae">Traumae</a> lessons - to get you started, a walkthrough if you may. There are 9 word types. And these lessons will explain to you how to use each and every family, from the simpliest constructs to the more complex ideas. At the end of these lessons, you should be able to express simple ideas. After each lesson, a new grammatical element will be introduced. Each block will teach you words to be reused in the lessons that follow.</p><h2 id="lesson1">Lesson 1: Say yes and no<small>Expressing agreement or disagreement</small></h2><table style="width:auto; float:right;margin-left:20px"><tbody><tr><th>English</th><th>Traumae</th><th>Adultspeak</th></tr><tr><td>positivity</td><td>xo</td><td>xo</td></tr><tr><td>negativity</td><td>bo</td><td>bo</td></tr></tbody></table><p>The first family that these lessons will explore is the "alignment family". The following 2 words/<a href="/Aeth">Aeths</a> will speaks of your position/stance on a topic. "Yes" or "No", "Good" or "Bad". And so your first Traumae word will be <b>Yes</b>, <a href="/Traumae:xo">xo</a>.</p><p></p><hr><h2 id="lesson2">Lesson 2: Asking a question<small>Asking for agreement or disagreement</small></h2><table style="width:auto; float:right;margin-left:20px"><tbody><tr><th>English</th><th>Traumae</th><th>Adultspeak</th></tr><tr><td>is it good ?</td><td>doxo</td><td>dxo</td></tr><tr><td>is it bad ?</td><td>dobo</td><td>dobo</td></tr></tbody></table><p>You now know <b>2 simple words</b>, that can now be mixed with eachother. As a third word, you need to learn "<a href="/traumae:do">do</a>". Do is an interogation letter, transforming anything into a question. When combined with "<a href="/traumae:xo">xo</a>", as "<a href="/traumae:doxo">doxo</a>", it creates the construct "Is it good?", or simply "good?". </p><hr><h2 id="lesson3">Lesson 3: Making Verbs<small>Creating simple actions</small></h2><table style="width:auto; float:right;margin-left:20px"><tbody><tr><th>English</th><th>Traumae</th><th>Adultspeak</th></tr><tr><td>communication</td><td>so</td><td>so</td></tr><tr><td>existance</td><td>lo</td><td>lo</td></tr><tr><td>interaction</td><td>vo</td><td>vo</td></tr></tbody></table><p>The next most important word family is for actions-type words, or verbs. When used in the beginning of a word, the word will become an action. For instance, turning "a thought" into "to think".</p><hr><h2 id="lesson4">Lesson 4: Combining previous lessons<small>will be updated soon</small></h2><table style="width:auto; float:right;margin-left:20px"><tbody><tr><th>English</th><th>Traumae</th><th>Adultspeak</th></tr><tr><td>to be seen</td><td>loso</td><td>lso</td></tr><tr><td>good sight</td><td>xoso</td><td>xso</td></tr><tr><td>to hope</td><td>soxo</td><td>sxo</td></tr></tbody></table><p>Simple enough, these constructs can also be mixed together to create new concepts.</p><hr><h2 id="lesson5">Lesson 5: Different types of verbs<small>will be updated soon</small></h2><table style="width:auto; float:right;margin-left:20px"><tbody><tr><th>English</th><th>Traumae</th><th>Adultspeak</th></tr><tr><td>to listen</td><td>kaso</td><td>ksao</td></tr><tr><td>unknown</td><td>unknown</td><td>tsao</td></tr><tr><td>to show</td><td>paso</td><td>psao</td></tr></tbody></table><p>The third most important family talks of "direction". We are reaching more complex nuances with this family and the ability to create sentences and to imply directions within constructs. Direction in traumae can be explained as a relative motion from the self. For instance, giving would be an outward gesture, and taking would be inward as it is something that is coming closer to the self.</p><p>The following explains will show verbs which do not start with either so,lo or vo.</p><hr><h2 id="lesson6">Lesson 6: Greetings<small>will be updated soon</small></h2><table style="width:auto; float:right;margin-left:20px"><tbody><tr><th>English</th><th>Traumae</th><th>Adultspeak</th></tr><tr><td>welcome</td><td>xoka</td><td>xoka</td></tr><tr><td>good bye</td><td>xopa</td><td>xopa</td></tr></tbody></table><p>Let us take a moment to learn how to say "Hello".</p><hr>
+                    <h1>Notes</h1>
+                    <p>This article has for goal to explain the reasons behind some aspects of the <a href="Traumae">Traumae</a> syntetic language. These notes were inspired or taken from <a href="/The+voidshaper+document">The voidshaper document</a>.</p>
+                    
+                    <h2>Choice of Aeths</h2>
+                    <p>The selection of the <i>core letters</i> are done following a few rules. </p>
+                    
+                    <ul>
+                        <li>Constructs should aspire to be immaterial, complex and infinite.</li>
+                        <li>Every permutation of two different letter should be comprehensible.</li>
+                        <li>Everything is dual, everything has two poles.</li>
+                    </ul>
+                    
+                    <p>While the choice for the simplier letters is easy to understand by comparing them against their opponent, some might be a bit harder to understand, partly due to the fact that they had to be translated into a single english word, where in some cases might not be the best of choices.</p>
+                    
+                    
+                    <p>The core meanings were not chosen to map the english language perfectly or even to explain everyday tasks. The language was originaly meant to talk of ideas rather than things. You can look at the <a href="Divieths">Divieths Dictionary</a> to see the list of 2 letters permutations.</p>
+                    
+                    <p>As highlited in the Voidshaper document, traumae constructs are better explained using the object.method pattern, ex: observation.multiplicity, rather than the <i>X of Y</i>, ex: the multiplicity of observation. And so using this pattern we can look at the core meanings in context as follow:</p>
+                    
+                    <pre>saso =&gt; so.sa(observation.multiplicity) or sight.multiply </pre>
+                    
+                    <p>This pattern seems ideal to visualise the letters, where each core letter have 27 associated methods and sentences are but a larger set of methods created from the combination of core letters.</p>
+                    
+                    <pre>posaso =&gt; saso.po</pre>
+                    
+                    <h2>Sounds</h2>
+                    
+                    <p>The pattern used to create the sound is very visual and should help to form a mental image of the sound for if only a few sounds are know, the remining ones can be extrapolated. The whole alphabet can be mapped onto a cube, splitting the cube into 3 horizontal layers will look as the following table.</p>
+                    
+                    <table>
+                        <tbody><tr><th colspan="3">Layer 1</th><th colspan="3">Layer 2</th><th colspan="3">Layer 3</th></tr>
+                            <tr><td>ki</td><td>xi</td><td>si</td><td>ka</td><td>xa</td><td>sa</td><td>ko</td><td>xo</td><td>so</td></tr>
+                            <tr><td>ti</td><td>di</td><td>li</td><td>ta</td><td>da</td><td>la</td><td>to</td><td>do</td><td>lo</td></tr>
+                            <tr><td>pi</td><td>bi</td><td>vi</td><td>pa</td><td>ba</td><td>va</td><td>po</td><td>bo</td><td>vo</td></tr>
+                        </tbody></table>
+                    
+                    <p>If we compare the sounds used in traumae against our alphabet, we get the following graph of unused letters and sounds.</p>
+                    
+                    <table>
+                        <tbody><tr>
+                            <th>a</th>
+                            <th>b</th>
+                            <td>c</td>
+                            <th>d</th>
+                            <td>e</td>
+                            <td>f</td>
+                            <td>g</td>
+                            <td>h</td>
+                            <th>i</th>
+                            <td>j</td>
+                            <th>k</th>
+                            <th>l</th>
+                            <td>m</td>
+                        </tr>
+                        <tr>
+                            <td>n</td>
+                            <th>o</th>
+                            <th>p</th>
+                            <td>q</td>
+                            <td>r</td>
+                            <th>s</th>
+                            <th>t</th>
+                            <td>u</td>
+                            <th>v</th>
+                            <td>w</td>
+                            <th>x</th>
+                            <td>y</td>
+                            <td>z</td>
+                        </tr>
+                        </tbody></table>
+                    
+                    <p>The sounds go from sharp to round as the letters' meaning are going toward simplicity and materiality. </p>
+                    
+                    <table>
+                        <tbody><tr><th colspan="2">Sharp</th><th colspan="2">Transition</th><th colspan="2">Round</th></tr>
+                            <tr><td>K</td><td>&gt;</td><td>T</td><td>&gt;</td><td>P</td></tr>
+                            <tr><td>X</td><td>&gt;</td><td>D</td><td>&gt;</td><td>B</td></tr>
+                            <tr><td>S</td><td>&gt;</td><td>L</td><td>&gt;</td><td>V</td></tr>
+                        </tbody></table>
+                    
+                    <h2>Counting System</h2>
+                    
+                    <p>Below is a draft of the number system, currently base 8.</p>
+                    
+                    <table>
+                        <tbody><tr><td>-1</td><td>vala</td><td>Lack of 1</td></tr>
+                            <tr><td>0</td><td>va</td><td>Lack of</td></tr>
+                            <tr><td>1</td><td>la</td><td>One</td></tr>
+                            <tr><td>2</td><td>sa</td><td>Small plural</td></tr>
+                            <tr><td>3</td><td>da</td><td>Between base 2 and base 4</td></tr>
+                            <tr><td>4</td><td>sasa</td><td>Combine of two smallest plural(2x2)</td></tr>
+                            <tr><td>5</td><td>xa</td><td>Actually sasaxa, 4+1</td></tr>
+                            <tr><td>6</td><td>sada</td><td>Between base 4 and base 8</td></tr>
+                            <tr><td>7</td><td>ba</td><td>Actually sasasaba or lavaba, 8-1</td></tr>
+                            <tr><td>8</td><td>la va</td><td>One and 0, 10</td></tr>
+                        </tbody></table> 
+                    
+                    
+                    
+                </wrapper>
+            </content><content class="diaries"></content></content>
+            
+    </body>
+</html>

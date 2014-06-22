@@ -8,10 +8,14 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface dictAppDelegate : NSObject <NSApplicationDelegate> {
+@interface dictAppDelegate : NSObject <NSApplicationDelegate,NSToolbarDelegate> {
     NSArray *_objects;
     NSArray *_filteredObjects;
     NSString *_currentFilter;
+    IBOutlet NSToolbar *toolbar;
+    IBOutlet NSView *searchView;
+    IBOutlet NSView *navView;
+    IBOutlet NSView *homeView;
 }
 
 @property (assign) IBOutlet NSWindow *window;

@@ -28,7 +28,23 @@
 		58C31BB5194B7B58006FFA5C /* dictAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C31BB4194B7B58006FFA5C /* dictAppDelegate.m */; };
 		58C31BB8194B7B58006FFA5C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58C31BB6194B7B58006FFA5C /* MainMenu.xib */; };
 		58C31BBA194B7B58006FFA5C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58C31BB9194B7B58006FFA5C /* Images.xcassets */; };
+		58DD63CA19575FEA0079758A /* Septambres-Revisit.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58931CFB1947F8F800888967 /* Septambres-Revisit.ttf */; };
+		58DD63CC1957600A0079758A /* Septambres-Revisit.ttf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 58931CFB1947F8F800888967 /* Septambres-Revisit.ttf */; };
+		58DD63CE195766690079758A /* core.html in Resources */ = {isa = PBXBuildFile; fileRef = 58DD63CD195766690079758A /* core.html */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		58DD63CB19575FF60079758A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Fonts;
+			dstSubfolderSpec = 7;
+			files = (
+				58DD63CC1957600A0079758A /* Septambres-Revisit.ttf in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		58931CFB1947F8F800888967 /* Septambres-Revisit.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Septambres-Revisit.ttf"; sourceTree = "<group>"; };
@@ -64,6 +80,7 @@
 		58C31BB4194B7B58006FFA5C /* dictAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dictAppDelegate.m; sourceTree = "<group>"; };
 		58C31BB7194B7B58006FFA5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		58C31BB9194B7B58006FFA5C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		58DD63CD195766690079758A /* core.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = core.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +181,7 @@
 			children = (
 				58C31BB3194B7B58006FFA5C /* dictAppDelegate.h */,
 				58C31BB4194B7B58006FFA5C /* dictAppDelegate.m */,
+				58DD63CD195766690079758A /* core.html */,
 				58C31BB6194B7B58006FFA5C /* MainMenu.xib */,
 				58C31BB9194B7B58006FFA5C /* Images.xcassets */,
 				58C31BA8194B7B58006FFA5C /* Supporting Files */,
@@ -210,6 +228,7 @@
 				58C31B9C194B7B58006FFA5C /* Sources */,
 				58C31B9D194B7B58006FFA5C /* Frameworks */,
 				58C31B9E194B7B58006FFA5C /* Resources */,
+				58DD63CB19575FF60079758A /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -266,6 +285,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58DD63CE195766690079758A /* core.html in Resources */,
+				58DD63CA19575FEA0079758A /* Septambres-Revisit.ttf in Resources */,
 				58C31BAC194B7B58006FFA5C /* InfoPlist.strings in Resources */,
 				58C31BBA194B7B58006FFA5C /* Images.xcassets in Resources */,
 				58C31BB2194B7B58006FFA5C /* Credits.rtf in Resources */,
