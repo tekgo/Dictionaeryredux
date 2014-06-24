@@ -13,6 +13,8 @@
     NSArray *_objects;
     NSArray *_filteredObjects;
     NSString *_currentFilter;
+    NSMutableArray* _filters;
+    int filterIndex;
     IBOutlet NSToolbar *toolbar;
     IBOutlet NSView *searchView;
     IBOutlet NSView *navView;
@@ -25,4 +27,7 @@
 @property (assign) IBOutlet NSTableView *tableView;
 
 -(IBAction)goHome:(id)sender ;
+
+-(IBAction)navAction:(id)sender;
+
 @end

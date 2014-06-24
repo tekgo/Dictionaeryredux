@@ -18,8 +18,10 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
-    _currentFilter = nil;
-    _objects = [[dictDataStore sharedDataStore] DataforFilter:_currentFilter maxLength:2];
+    _filters = [NSMutableArray new];
+    filterIndex = 0;
+    _currentFilter = @"";
+    [self setFilter:@""];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshData) name:@"dictDataStoreUpdate" object:nil];
     [toolbar setDelegate:self];
     
@@ -76,8 +78,7 @@
     NSURL* fileURL = [NSURL fileURLWithPath:filePath];
     NSURLRequest* request = [NSURLRequest requestWithURL:fileURL];
     [[myWebView mainFrame] loadRequest:request];
-    _currentFilter = nil;
-    [self refreshData];
+    [self setFilter:@""];
 }
 
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication {
@@ -85,11 +86,76 @@
 }
 
 -(void)refreshData {
-    if(_currentFilter!=nil)
-        _objects = [[dictDataStore sharedDataStore] DataforFilter:_currentFilter maxLength:(int)_currentFilter.length+2];
-    else
+    if(![_currentFilter isEqualToString:@""]) {
+        if([_currentFilter rangeOfString:@"!"].location==0) {
+            NSString* newFilter = [[_currentFilter componentsSeparatedByString:@"!"] lastObject];
+            _objects = [[dictDataStore sharedDataStore] DataForSearch:newFilter];
+            //_objects = [[dictDataStore sharedDataStore] DataforFilterWithParents:newFilter maxLength:(int)newFilter.length+2];
+        }
+        else {
+            _objects = [[dictDataStore sharedDataStore] DataforFilterWithParents:_currentFilter maxLength:(int)_currentFilter.length+2];
+        }
+    }
+    else {
         _objects = [[dictDataStore sharedDataStore] DataforFilter:nil maxLength:2];
+    }
+    [_tableView scrollPoint:NSPointFromCGPoint(CGPointMake(0, 0))];
     [_tableView reloadData];
+}
+
+-(void)setFilter:(NSString*)newFilter {
+    if(filterIndex<_filters.count && _filters.count>0) {
+        [_filters removeObjectsInRange:(NSRange){filterIndex, _filters.count-filterIndex}];
+    }
+    if(![_currentFilter isEqualToString:newFilter])
+        if(!_currentFilter || !newFilter || [_currentFilter rangeOfString:@"!"].location!=0 || [newFilter rangeOfString:@"!"].location!=0)
+            [_filters addObject:_currentFilter];
+    filterIndex = (int)_filters.count;
+    _currentFilter = newFilter;
+    
+    
+    if([_currentFilter isEqualToString:@"!"] && _filters.count>0) {
+        _currentFilter = [_filters lastObject];
+        [_filters removeLastObject];
+        filterIndex = (int)_filters.count;
+        [self setFilter:_currentFilter];
+    }
+    else {
+        [self refreshData];
+    }
+}
+
+-(IBAction)navAction:(id)sender {
+        NSSegmentedControl* toggleNav = sender; // this is your segmented control
+        if ([toggleNav selectedSegment] == 0) {
+            if(filterIndex>0) {
+                filterIndex--;
+                _currentFilter = [_filters objectAtIndex:filterIndex];
+                [self refreshData];
+            }
+        } else if ([toggleNav selectedSegment] == 1) {
+            if(filterIndex+1<_filters.count) {
+                filterIndex++;
+                _currentFilter = [_filters objectAtIndex:filterIndex];
+                [self refreshData];
+            }
+        }
+}
+
+-(void)loadWord:(dictTraumaeWord*)word {
+    NSMutableArray* elements = [NSMutableArray new];
+    [elements addObject:[NSString stringWithFormat:@"<p>%@</p>",[word.traumae capitalizedString]]];
+    [elements addObject:[NSString stringWithFormat:@"<p style='font-family:Septambres-Revisit'>%@</p>",word.qwertyString]];
+    [[myWebView mainFrame] loadHTMLString:[elements componentsJoinedByString:@"\n"] baseURL:nil];
+}
+
+-(void)selectItem:(dictTraumaeWord*)object {
+    if(!object.valid) {
+        [self goHome:self];
+        return;
+    }
+    [self selectWord:object.traumae forced:false];
+    
 }
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView {
@@ -124,19 +190,24 @@
         dictTraumaeWord *object = [[dictDataStore sharedDataStore] getWord:word];
         if(!object)
             return;
-        if(object.children>0 || forced) {
-            _currentFilter = object.traumae;
-            _objects = [[dictDataStore sharedDataStore] DataforFilterWithParents:_currentFilter maxLength:(int)_currentFilter.length+2];
-            [_tableView scrollPoint:NSPointFromCGPoint(CGPointMake(0, 0))];
-            [_tableView reloadData];
+        if(object.traumae!=_currentFilter) {
+            if(object.children>0 || forced) {
+                [self setFilter:object.traumae];
+                int index = 0;
+                for(dictTraumaeWord* thisWord in _objects) {
+                    if ([thisWord.traumae isEqualToString:object.traumae]) {
+                        [_tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:index] byExtendingSelection:false];
+                    }
+                    index++;
+                }
+            }
         }
+        [self loadWord:object];
+        
     }
 }
 
--(void)selectItem:(dictTraumaeWord*)object {
-    [self selectWord:object.traumae forced:false];
-    
-}
+
 
 #pragma mark -
 #pragma mark NSToolbarItemValidation
@@ -299,6 +370,16 @@
 
 
 
+- (void)controlTextDidChange:(NSNotification *)aNotification {
+    NSSearchField *searchField = [aNotification object];
+    NSString* currentString = searchField.stringValue;
+    [self setFilter:[NSString stringWithFormat:@"!%@",currentString]];
+}
 
+/*- (void)controlTextDidEndEditing:(NSNotification *)aNotification {
+    NSSearchField *searchField = [aNotification object];
+    NSString* currentString = searchField.stringValue;
+    NSLog(@"X%@",currentString);
+}*/
 
 @end

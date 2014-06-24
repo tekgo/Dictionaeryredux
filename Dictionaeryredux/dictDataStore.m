@@ -200,13 +200,6 @@
         return [first compare:second];
     }];
     
-    sortedArray = [sortedArray sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
-        NSString *first = ((dictTraumaeWord*)a).traumae;
-        NSString *second = ((dictTraumaeWord*)b).traumae;
-        NSNumber *firsta = [NSNumber numberWithLong:first.length];
-        NSNumber *seconda = [NSNumber numberWithLong:second.length];
-        return [firsta compare:seconda];
-    }];
     tempArray = [NSMutableArray arrayWithArray:sortedArray];
     
     for(int i=0;i<tempArray.count;i++) {
@@ -218,7 +211,24 @@
         }
     }
     
-    return sortedArray;
+    sortedArray = [tempArray sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+        NSString *first = ((dictTraumaeWord*)a).traumae;
+        NSString *second = ((dictTraumaeWord*)b).traumae;
+        NSNumber *firsta = [NSNumber numberWithLong:first.length];
+        NSNumber *seconda = [NSNumber numberWithLong:second.length];
+        return [firsta compare:seconda];
+    }];
+    tempArray = [NSMutableArray arrayWithArray:sortedArray];
+    
+    
+    
+    /*if(length>2) {
+        dictTraumaeWord *coreWord = [[dictTraumaeWord alloc] init];
+        coreWord.traumae = @"core";
+        [tempArray insertObject:coreWord atIndex:0];
+    }*/
+    
+    return tempArray;
     
 }
 

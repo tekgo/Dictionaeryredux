@@ -202,11 +202,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Dictionaeryredux/dictDataStore.m"
-            timestampString = "425319783.461042"
+            timestampString = "425323079.872881"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "254"
-            endingLineNumber = "254"
+            startingLineNumber = "264"
+            endingLineNumber = "264"
             landmarkName = "-DataForSearch:"
             landmarkType = "5">
          </BreakpointContent>
@@ -266,27 +266,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DictionaeryMac/dictAppDelegate.m"
-            timestampString = "425150413.621474"
+            timestampString = "425337361.510527"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "-applicationDidFinishLaunching:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DictionaeryMac/dictAppDelegate.m"
-            timestampString = "425172459.146589"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
             landmarkName = "-tableView:viewForTableColumn:row:"
             landmarkType = "5">
          </BreakpointContent>
@@ -298,11 +282,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DictionaeryMac/dictAppDelegate.m"
-            timestampString = "425172459.146589"
+            timestampString = "425337361.510527"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
             landmarkName = "-numberOfRowsInTableView:"
             landmarkType = "5">
          </BreakpointContent>
@@ -314,11 +298,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DictionaeryMac/dictAppDelegate.m"
-            timestampString = "425172459.146589"
+            timestampString = "425337361.510527"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
             landmarkName = "-tableView:viewForTableColumn:row:"
             landmarkType = "5">
          </BreakpointContent>
@@ -330,11 +314,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DictionaeryMac/dictAppDelegate.m"
-            timestampString = "425321302.155066"
+            timestampString = "425337361.510527"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
+            startingLineNumber = "181"
+            endingLineNumber = "181"
             landmarkName = "-tableViewSelectionDidChange:"
             landmarkType = "5">
          </BreakpointContent>
@@ -346,11 +330,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DictionaeryMac/dictAppDelegate.m"
-            timestampString = "425321302.155066"
+            timestampString = "425337361.510527"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
+            startingLineNumber = "189"
+            endingLineNumber = "189"
             landmarkName = "-selectWord:forced:"
             landmarkType = "5">
          </BreakpointContent>
@@ -362,11 +346,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DictionaeryMac/dictAppDelegate.m"
-            timestampString = "425321302.155066"
+            timestampString = "425337361.510527"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
             landmarkName = "-selectWord:forced:"
             landmarkType = "5">
          </BreakpointContent>
@@ -526,6 +510,38 @@
             startingLineNumber = "22"
             endingLineNumber = "22"
             landmarkName = "-initWithDictionary:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DictionaeryMac/dictAppDelegate.m"
+            timestampString = "425331721.642817"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "-setFilter:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DictionaeryMac/dictAppDelegate.m"
+            timestampString = "425331721.642817"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
+            landmarkName = "-navAction:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
