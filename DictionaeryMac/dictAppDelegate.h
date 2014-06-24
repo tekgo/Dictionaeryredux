@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <WebKit/WebKit.h>
 
 @interface dictAppDelegate : NSObject <NSApplicationDelegate,NSToolbarDelegate> {
     NSArray *_objects;
@@ -16,9 +17,12 @@
     IBOutlet NSView *searchView;
     IBOutlet NSView *navView;
     IBOutlet NSView *homeView;
+    IBOutlet WebView *myWebView;
 }
 
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet NSTextView *textView;
 @property (assign) IBOutlet NSTableView *tableView;
+
+-(IBAction)goHome:(id)sender ;
 @end

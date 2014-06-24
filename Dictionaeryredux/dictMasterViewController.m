@@ -72,11 +72,11 @@
         return 44;
     }
     else {
-        NSDictionary *object = _objects[indexPath.row];
+        dictTraumaeWord *object = _objects[indexPath.row];
         
         if(currentFilter) {
-            if([currentFilter isEqualToString:object[@"traumae"]]) {
-                NSString *str = [(NSArray*)object[@"englishWords"] componentsJoinedByString:@"\n"];
+            if([currentFilter isEqualToString:object.traumae]) {
+                NSString *str = [object.alternatives componentsJoinedByString:@"\n"];
                 UILabel *gettingSizeLabel = [[UILabel alloc] init];
                 gettingSizeLabel.font = [UIFont systemFontOfSize:17.0];
                 gettingSizeLabel.text = str;
@@ -99,7 +99,7 @@
     
     
     
-    NSDictionary *object;
+    dictTraumaeWord *object;
     
     if (tableView == self.searchDisplayController.searchResultsTableView) {
         
@@ -114,22 +114,22 @@
         object = _objects[indexPath.row];
         
         if(currentFilter) {
-            if([currentFilter isEqualToString:object[@"traumae"]]) {
+            if([currentFilter isEqualToString:object.traumae]) {
                 cell = [self.tableView dequeueReusableCellWithIdentifier:@"DetailCell" forIndexPath:indexPath];
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
                 cell.backgroundColor = [UIColor blackColor];
                 UILabel* detailsTraumae = (UILabel*)[cell viewWithTag:100];
                 UIFont *font =[UIFont fontWithName:@"Septambres-Revisit" size:24];
                 detailsTraumae.font = font;
-                detailsTraumae.text = [self toQwerty:object[@"traumae"]];
+                detailsTraumae.text = object.qwertyString;
                 
-                ((UILabel*)[cell viewWithTag:300]).text = (NSString*)object[@"traumae"] ;
+                ((UILabel*)[cell viewWithTag:300]).text = object.traumae ;
                 
-                ((UILabel*)[cell viewWithTag:400]).text = [(NSString*)object[@"adultspeak"] uppercaseString] ;
+                ((UILabel*)[cell viewWithTag:400]).text = [object.adultspeak uppercaseString] ;
                 ((UILabel*)[cell viewWithTag:400]).font = [UIFont fontWithName:@"Didot-Bold" size:28];
                 
-                if(object[@"englishWords"]) {
-                    ((UILabel*)[cell viewWithTag:200]).text = [(NSArray*)object[@"englishWords"] componentsJoinedByString:@"\n"];
+                if(object.alternatives) {
+                    ((UILabel*)[cell viewWithTag:200]).text = [object.alternatives componentsJoinedByString:@"\n"];
                     [((UILabel*)[cell viewWithTag:200]) sizeToFit];
                 }
                 //[cell sizeToFit];
@@ -148,9 +148,9 @@
         
     }
     
-    cell.textLabel.text = object[@"traumae"];
-    if(object[@"english"]) {
-        cell.detailTextLabel.text = object[@"english"];
+    cell.textLabel.text = object.traumae;
+    if(object.english) {
+        cell.detailTextLabel.text = object.english;
     }
     
     
@@ -166,10 +166,10 @@
         return indexPath;
     }
     
-    NSDictionary *object = _objects[indexPath.row];
+    dictTraumaeWord *object = _objects[indexPath.row];
     
     if(currentFilter) {
-        if([currentFilter isEqualToString:object[@"traumae"]])
+        if([currentFilter isEqualToString:object.traumae])
             return nil;
     }
 
@@ -194,13 +194,13 @@
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDictionary *object = _objects[indexPath.row];
+        dictTraumaeWord *object = _objects[indexPath.row];
         
-        [(dictMasterViewController*)[segue destinationViewController] setFilter:object[@"traumae"]];
+        [(dictMasterViewController*)[segue destinationViewController] setFilter:object.traumae];
     }
     if ([[segue identifier] isEqualToString:@"searchDetail"]) {
-        NSDictionary *object = [_filteredObjects objectAtIndex: self.searchDisplayController.searchResultsTableView.indexPathForSelectedRow.row];
-        [(dictMasterViewController*)[segue destinationViewController] setFilter:object[@"traumae"]];
+        dictTraumaeWord *object = [_filteredObjects objectAtIndex: self.searchDisplayController.searchResultsTableView.indexPathForSelectedRow.row];
+        [(dictMasterViewController*)[segue destinationViewController] setFilter:object.traumae];
     }
 }
 
@@ -236,42 +236,5 @@
     return YES;
 }
 
-- (NSString*) toQwerty :(NSString*)traumae
-{
-	NSString *fixed = traumae;
-	
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"xi" withString:@"w"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"di" withString:@"t"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"bi" withString:@"i"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"xa" withString:@"s"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"da" withString:@"g"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"ba" withString:@"k"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"xo" withString:@"x"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"do" withString:@"b"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"bo" withString:@","];
-	
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"ki" withString:@"q"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"ti" withString:@"r"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"pi" withString:@"u"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"ka" withString:@"a"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"ta" withString:@"f"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"pa" withString:@"j"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"ko" withString:@"z"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"to" withString:@"v"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"po" withString:@"m"];
-	
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"si" withString:@"e"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"li" withString:@"y"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"vi" withString:@"o"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"sa" withString:@"d"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"la" withString:@"h"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"va" withString:@"l"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"so" withString:@"c"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"lo" withString:@"n"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"vo" withString:@"."];
-    
-	return fixed;
-	
-}
 
 @end

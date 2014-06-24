@@ -106,39 +106,18 @@
 
 - (void) dictionaerySequence :(NSDictionary*)nodeRaw
 {
-	NSMutableDictionary *tempDict = [NSMutableDictionary new];
+	NSMutableArray *tempArr = [NSMutableArray new];
     for (NSString* key in nodeRaw) {
         id value = [nodeRaw objectForKey:key];
-        NSString *englishval = @"";
-        if(value[@"traumae"]!=NULL && [value[@"traumae"] length]>0){
-            NSMutableDictionary *tempVal = [NSMutableDictionary dictionaryWithDictionary:value];
-            NSMutableArray *tempStringArray = [NSMutableArray new];
-            NSMutableArray *tempEngArray = [NSMutableArray new];
-            NSMutableArray *englishWords = [NSMutableArray new];
-            [tempStringArray addObject:value[@"traumae"]];
-            [tempStringArray addObject:value[@"adultspeak"]];
-            if(value[@"english"] && [value[@"english"] isKindOfClass:[NSString class]]) {
-                [tempStringArray addObject:value[@"english"]];
-                [tempEngArray addObject:value[@"english"]];
-                [englishWords addObject:value[@"english"]];
-                englishval = value[@"english"];
-            }
-            if(value[@"alternatives"] &&  [value[@"alternatives"] isKindOfClass:[NSDictionary class]]) {
-                for (NSString* key in value[@"alternatives"]) {
-                    [tempStringArray addObject:key];
-                    [tempEngArray addObject:key];
-                    if(![englishval isEqualToString:key])
-                        [englishWords addObject:key];
-                }
-            }
-            [tempVal setObject:[tempStringArray componentsJoinedByString:@","] forKey:@"searchString"];
-            [tempVal setObject:[tempEngArray componentsJoinedByString:@","] forKey:@"engSearchString"];
-            [tempVal setObject:englishWords forKey:@"englishWords"];
-            [tempVal setObject:[self toNumeric:(NSString*)value[@"traumae"]] forKey:@"numericSort"];
-            [tempDict setObject:tempVal forKey:key];
+        
+        dictTraumaeWord* word = [[dictTraumaeWord alloc] initWithDictionary:value];
+        if(word.valid) {
+            [tempArr addObject:word];
         }
-    }
-	nodeDict = tempDict;
+        
+        
+        }
+	words = tempArr;
     [[NSNotificationCenter defaultCenter] postNotificationName:@"dictDataStoreUpdate" object:self];
 }
 
@@ -149,32 +128,31 @@
 
 - (NSArray*) DataforFilter:(NSString*)filter maxLength:(int)length {
     NSMutableArray *tempArray = [NSMutableArray new];
-    for (NSString* key in nodeDict) {
-		NSDictionary *value = [nodeDict objectForKey:key];
+    for (dictTraumaeWord* word in words) {;
         
 		
 		// Default letters
-        if(!filter || [(NSString*)value[@"traumae"]  rangeOfString:filter].location == 0) {
-            if([value[@"traumae"] length] <= length && [value[@"traumae"] length]>0){
+        if(!filter || [word.traumae  rangeOfString:filter].location == 0) {
+            if([word.traumae length] <= length && [word.traumae length]>0){
                 
-                NSMutableDictionary *tempVal = [NSMutableDictionary dictionaryWithDictionary:value];
+                //NSMutableDictionary *tempVal = [NSMutableDictionary dictionaryWithDictionary:value];
                 
                 
-                [tempArray addObject:tempVal];
+                [tempArray addObject:word];
             }
         }
 		
 	}
     
     NSArray *sortedArray = [tempArray sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
-        NSString *first = ((NSDictionary*)a)[@"numericSort"];
-        NSString *second = ((NSDictionary*)b)[@"numericSort"];
+        NSString *first = ((dictTraumaeWord*)a).sortString;
+        NSString *second = ((dictTraumaeWord*)b).sortString;
         return [first compare:second];
     }];
     
     sortedArray = [sortedArray sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
-        NSString *first = ((NSDictionary*)a)[@"traumae"];
-        NSString *second = ((NSDictionary*)b)[@"traumae"];
+        NSString *first = ((dictTraumaeWord*)a).traumae;
+        NSString *second = ((dictTraumaeWord*)b).traumae;
         NSNumber *firsta = [NSNumber numberWithLong:first.length];
         NSNumber *seconda = [NSNumber numberWithLong:second.length];
         return [firsta compare:seconda];
@@ -182,10 +160,60 @@
     tempArray = [NSMutableArray arrayWithArray:sortedArray];
     
     for(int i=0;i<tempArray.count;i++) {
-        NSDictionary* value = tempArray[i];
-        if([(NSString*)value[@"traumae"] isEqualToString:filter]) {
-            [tempArray removeObject:value];
-            [tempArray insertObject:value atIndex:0];
+        dictTraumaeWord* word = tempArray[i];
+        if([word.traumae isEqualToString:filter]) {
+            [tempArray removeObject:word];
+            [tempArray insertObject:word atIndex:0];
+            break;
+        }
+    }
+    
+    return sortedArray;
+    
+}
+
+- (NSArray*) DataforFilterWithParents:(NSString*)filter maxLength:(int)length {
+    NSMutableArray *tempArray = [NSMutableArray new];
+    for (dictTraumaeWord* word in words) {
+        
+		bool added=false;
+		// Default letters
+        if(!filter || [word.traumae  rangeOfString:filter].location == 0) {
+            if([word.traumae length] <= length && [word.traumae length]>0){
+                
+                
+                added=true;
+                [tempArray addObject:word];
+            }
+        }
+        if(!added && filter) {
+            if([filter rangeOfString:word.traumae].location == 0) {
+                [tempArray addObject:word];
+            }
+        }
+		
+	}
+    
+    NSArray *sortedArray = [tempArray sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+        NSString *first = ((dictTraumaeWord*)a).sortString;
+        NSString *second = ((dictTraumaeWord*)b).sortString;
+        return [first compare:second];
+    }];
+    
+    sortedArray = [sortedArray sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+        NSString *first = ((dictTraumaeWord*)a).traumae;
+        NSString *second = ((dictTraumaeWord*)b).traumae;
+        NSNumber *firsta = [NSNumber numberWithLong:first.length];
+        NSNumber *seconda = [NSNumber numberWithLong:second.length];
+        return [firsta compare:seconda];
+    }];
+    tempArray = [NSMutableArray arrayWithArray:sortedArray];
+    
+    for(int i=0;i<tempArray.count;i++) {
+        dictTraumaeWord* word = tempArray[i];
+        if([word.traumae isEqualToString:filter]) {
+            [tempArray removeObject:word];
+            [tempArray insertObject:word atIndex:0];
             break;
         }
     }
@@ -201,29 +229,29 @@
     tempArrays[0] = [NSMutableArray new];
     tempArrays[1] = [NSMutableArray new];
     tempArrays[2] = [NSMutableArray new];
-    for (NSString* key in nodeDict) {
-        NSDictionary* value = [nodeDict objectForKey:key];
-        if([(NSString*)value[@"searchString"]  rangeOfString:searchString].location != NSNotFound) {
+    for (dictTraumaeWord* word in words) {
+        
+        if([word.searchString  rangeOfString:searchString].location != NSNotFound) {
             
             BOOL added=false;
-            if([(NSString*)value[@"traumae"]  rangeOfString:searchString].location == 0) {
-                [tempArrays[0] addObject:value];
+            if([word.traumae  rangeOfString:searchString].location == 0) {
+                [tempArrays[0] addObject:word];
                 added=true;
             }
-            if([(NSString*)value[@"adultspeak"]  rangeOfString:searchString].location == 0) {
-                [tempArrays[0] addObject:value];
+            if([word.adultspeak  rangeOfString:searchString].location == 0) {
+                [tempArrays[0] addObject:word];
                 added=true;
             }
-            if(!added && [(NSString*)value[@"traumae"]  rangeOfString:searchString].location != NSNotFound) {
-                [tempArrays[1] addObject:value];
+            if(!added && [word.traumae  rangeOfString:searchString].location != NSNotFound) {
+                [tempArrays[1] addObject:word];
                 added=true;
             }
-            if(!added && [(NSString*)value[@"adultspeak"]  rangeOfString:searchString].location != NSNotFound) {
-                [tempArrays[1] addObject:value];
+            if(!added && [word.adultspeak rangeOfString:searchString].location != NSNotFound) {
+                [tempArrays[1] addObject:word];
                 added=true;
             }
-            if(!added && [(NSString*)value[@"engSearchString"]  rangeOfString:searchString].location != NSNotFound) {
-                [tempArrays[2] addObject:value];
+            if(!added && [word.englishSearchString rangeOfString:searchString].location != NSNotFound) {
+                [tempArrays[2] addObject:word];
             }
             
         }
@@ -238,47 +266,17 @@
     return tempArray;
 }
 
-// ------------------------
-#  pragma mark Traumae Functions
-// ------------------------
+-(dictTraumaeWord*)getWord:(NSString*)word {
+    for (dictTraumaeWord* tword in words) {
+        if(tword.traumae && [[tword.traumae lowercaseString] isEqualToString:[[word lowercaseString] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]])
+            return tword;
+        
+    }
 
-- (NSString*) toNumeric :(NSString*)traumae //Changes traumae to a numeric form for sorting.
-{
-	NSString *fixed = traumae;
-	
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"xi" withString:@"01"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"di" withString:@"02"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"bi" withString:@"03"];
-    fixed = [fixed stringByReplacingOccurrencesOfString:@"ki" withString:@"04"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"ti" withString:@"05"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"pi" withString:@"06"];
-    fixed = [fixed stringByReplacingOccurrencesOfString:@"si" withString:@"07"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"li" withString:@"08"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"vi" withString:@"09"];
-    
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"xa" withString:@"10"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"da" withString:@"11"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"ba" withString:@"12"];
-    fixed = [fixed stringByReplacingOccurrencesOfString:@"ka" withString:@"13"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"ta" withString:@"14"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"pa" withString:@"15"];
-    fixed = [fixed stringByReplacingOccurrencesOfString:@"sa" withString:@"16"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"la" withString:@"17"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"va" withString:@"18"];
-    
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"xo" withString:@"19"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"do" withString:@"20"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"bo" withString:@"21"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"ko" withString:@"22"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"to" withString:@"23"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"po" withString:@"24"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"so" withString:@"25"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"lo" withString:@"26"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"vo" withString:@"27"];
-    
-	return fixed;
-	
+    return nil;
 }
+
+
 
 
 @end

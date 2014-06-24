@@ -33,10 +33,51 @@
     
     // tell the toolbar to show icons only by default
     [toolbar setDisplayMode:NSToolbarDisplayModeIconOnly];
-    NSData *htmlData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"core" ofType:@"html"]];
-    NSAttributedString *textToBeInserted = [[NSAttributedString alloc] initWithHTML:htmlData documentAttributes:nil];
-    [[_textView textStorage] setAttributedString:textToBeInserted];
     
+    [self goHome:self];
+    [myWebView setPolicyDelegate:self];
+    
+}
+
+- (void)webView:(WebView *)sender decidePolicyForNavigationAction:(NSDictionary *)actionInformation request:(NSURLRequest *)request frame:(WebFrame *)frame decisionListener:(id<WebPolicyDecisionListener>)listener {
+    
+    NSUInteger actionType = [[actionInformation objectForKey:WebActionNavigationTypeKey] unsignedIntValue];
+    if (actionType == WebNavigationTypeLinkClicked) {
+        NSString *host = [[request URL] host];
+        if (host) {
+            [[NSWorkspace sharedWorkspace] openURL:[actionInformation objectForKey:WebActionOriginalURLKey]];
+            [listener ignore];
+        } else {
+            NSString *lastPath = [[[request URL] lastPathComponent] lowercaseString];
+            if([lastPath  rangeOfString:@"traumae:"].location != NSNotFound) {
+                NSString* traumaeWord = [[lastPath componentsSeparatedByString:@":"] lastObject];
+                [self selectWord:traumaeWord forced:true];
+                [listener ignore];
+                return;
+            }
+            [listener use];
+        }
+
+    } else {
+        [listener use];
+    }
+    
+    
+    
+}
+
+- (void)webView:(WebView *)sender decidePolicyForNewWindowAction:(NSDictionary *)actionInformation request:(NSURLRequest *)request newFrameName:(NSString *)frameName decisionListener:(id<WebPolicyDecisionListener>)listener {
+    [[NSWorkspace sharedWorkspace] openURL:[actionInformation objectForKey:WebActionOriginalURLKey]];
+    [listener ignore];
+}
+
+-(IBAction)goHome:(id)sender {
+    NSString* filePath = [[NSBundle mainBundle] pathForResource:@"core" ofType:@"html"];
+    NSURL* fileURL = [NSURL fileURLWithPath:filePath];
+    NSURLRequest* request = [NSURLRequest requestWithURL:fileURL];
+    [[myWebView mainFrame] loadRequest:request];
+    _currentFilter = nil;
+    [self refreshData];
 }
 
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication {
@@ -60,11 +101,9 @@
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
     
     NSView *view = [tableView makeViewWithIdentifier:@"dataCell" owner:self];
-    NSDictionary *object = _objects[row];
+    dictTraumaeWord *object = _objects[row];
     NSTextField *textField = [view viewWithTag:100];
-    //if(textField!=NULL)
-    //[textField setTitle:object[@"traumae"]];
-    [textField setStringValue:[((NSString*)object[@"traumae"]) capitalizedString]];
+    [textField setStringValue:[object.traumae capitalizedString]];
     
     
     return view;
@@ -75,27 +114,27 @@
 - (void)tableViewSelectionDidChange:(NSNotification *)aNotification {
     NSInteger row = [_tableView selectedRow];
     if(row!=-1) {
-        NSDictionary *object = _objects[row];
+        dictTraumaeWord *object = _objects[row];
         [self selectItem:object];
     }
 }
 
--(void)selectItem:(NSDictionary*)object {
-    if(object[@"children"]>0) {
-        _currentFilter = object[@"traumae"];
-        _objects = [[dictDataStore sharedDataStore] DataforFilter:_currentFilter maxLength:(int)_currentFilter.length+2];
-        [_tableView scrollPoint:NSPointFromCGPoint(CGPointMake(0, 0))];
-        [_tableView reloadData];
+-(void)selectWord:(NSString*)word forced:(bool)forced {
+    if(word) {
+        dictTraumaeWord *object = [[dictDataStore sharedDataStore] getWord:word];
+        if(!object)
+            return;
+        if(object.children>0 || forced) {
+            _currentFilter = object.traumae;
+            _objects = [[dictDataStore sharedDataStore] DataforFilterWithParents:_currentFilter maxLength:(int)_currentFilter.length+2];
+            [_tableView scrollPoint:NSPointFromCGPoint(CGPointMake(0, 0))];
+            [_tableView reloadData];
+        }
     }
-    [_textView setString:[((NSString*)object[@"traumae"]) capitalizedString]];
-    
-    NSFont *font =[NSFont fontWithName:@"Septambres-Revisit" size:24];
-    
-    NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObject:font
-                                                                forKey:NSFontAttributeName];
-    NSAttributedString *theNewString = [[NSAttributedString alloc] initWithString:[self toQwerty:object[@"traumae"]] attributes:attrsDictionary];
-    [[_textView textStorage] appendAttributedString:theNewString];
-    //[_textView setAttributedStringValue:theNewString];
+}
+
+-(void)selectItem:(dictTraumaeWord*)object {
+    [self selectWord:object.traumae forced:false];
     
 }
 
@@ -258,43 +297,7 @@
     return item;
 }
 
-- (NSString*) toQwerty :(NSString*)traumae
-{
-	NSString *fixed = traumae;
-	
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"xi" withString:@"w"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"di" withString:@"t"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"bi" withString:@"i"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"xa" withString:@"s"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"da" withString:@"g"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"ba" withString:@"k"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"xo" withString:@"x"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"do" withString:@"b"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"bo" withString:@","];
-	
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"ki" withString:@"q"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"ti" withString:@"r"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"pi" withString:@"u"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"ka" withString:@"a"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"ta" withString:@"f"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"pa" withString:@"j"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"ko" withString:@"z"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"to" withString:@"v"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"po" withString:@"m"];
-	
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"si" withString:@"e"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"li" withString:@"y"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"vi" withString:@"o"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"sa" withString:@"d"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"la" withString:@"h"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"va" withString:@"l"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"so" withString:@"c"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"lo" withString:@"n"];
-	fixed = [fixed stringByReplacingOccurrencesOfString:@"vo" withString:@"."];
-    
-	return fixed;
-	
-}
+
 
 
 

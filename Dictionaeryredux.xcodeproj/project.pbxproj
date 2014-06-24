@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		584468B41959CCA4002561C6 /* dictTraumaeWord.m in Sources */ = {isa = PBXBuildFile; fileRef = 584468B31959CCA4002561C6 /* dictTraumaeWord.m */; };
+		584468B51959CCA4002561C6 /* dictTraumaeWord.m in Sources */ = {isa = PBXBuildFile; fileRef = 584468B31959CCA4002561C6 /* dictTraumaeWord.m */; };
+		58651E911958CA7900CD3BA6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58651E901958CA7900CD3BA6 /* Cocoa.framework */; };
 		58931CFD1947F8F800888967 /* Septambres-Revisit.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58931CFB1947F8F800888967 /* Septambres-Revisit.ttf */; };
 		58ABC6E0194BAEE3004232D6 /* dictDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B197E61947906E00B9D9FA /* dictDataStore.m */; };
 		58ABC6E1194BB098004232D6 /* dict.json in Resources */ = {isa = PBXBuildFile; fileRef = 58B197E8194790D000B9D9FA /* dict.json */; };
@@ -21,7 +24,6 @@
 		58B197C91947879100B9D9FA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58B197C81947879100B9D9FA /* Images.xcassets */; };
 		58B197E71947906E00B9D9FA /* dictDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B197E61947906E00B9D9FA /* dictDataStore.m */; };
 		58B197E9194790D000B9D9FA /* dict.json in Resources */ = {isa = PBXBuildFile; fileRef = 58B197E8194790D000B9D9FA /* dict.json */; };
-		58C31BA2194B7B58006FFA5C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58C31BA1194B7B58006FFA5C /* Cocoa.framework */; };
 		58C31BAC194B7B58006FFA5C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58C31BAA194B7B58006FFA5C /* InfoPlist.strings */; };
 		58C31BAE194B7B58006FFA5C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C31BAD194B7B58006FFA5C /* main.m */; };
 		58C31BB2194B7B58006FFA5C /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 58C31BB0194B7B58006FFA5C /* Credits.rtf */; };
@@ -31,6 +33,7 @@
 		58DD63CA19575FEA0079758A /* Septambres-Revisit.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58931CFB1947F8F800888967 /* Septambres-Revisit.ttf */; };
 		58DD63CC1957600A0079758A /* Septambres-Revisit.ttf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 58931CFB1947F8F800888967 /* Septambres-Revisit.ttf */; };
 		58DD63CE195766690079758A /* core.html in Resources */ = {isa = PBXBuildFile; fileRef = 58DD63CD195766690079758A /* core.html */; };
+		58DD63D019576B350079758A /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58DD63CF19576B350079758A /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -47,7 +50,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		58931CFB1947F8F800888967 /* Septambres-Revisit.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Septambres-Revisit.ttf"; sourceTree = "<group>"; };
+		584468B21959CCA4002561C6 /* dictTraumaeWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dictTraumaeWord.h; sourceTree = "<group>"; };
+		584468B31959CCA4002561C6 /* dictTraumaeWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dictTraumaeWord.m; sourceTree = "<group>"; };
+		58651E901958CA7900CD3BA6 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		58931CFB1947F8F800888967 /* Septambres-Revisit.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Septambres-Revisit.ttf"; path = "Dictionaeryredux/Septambres-Revisit.ttf"; sourceTree = "<group>"; };
 		58B197A71947879000B9D9FA /* Dictionaeryredux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dictionaeryredux.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58B197AA1947879000B9D9FA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		58B197AC1947879100B9D9FA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -62,15 +68,10 @@
 		58B197C21947879100B9D9FA /* dictMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dictMasterViewController.h; sourceTree = "<group>"; };
 		58B197C31947879100B9D9FA /* dictMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dictMasterViewController.m; sourceTree = "<group>"; };
 		58B197C81947879100B9D9FA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		58B197CF1947879100B9D9FA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		58B197E51947906E00B9D9FA /* dictDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dictDataStore.h; sourceTree = "<group>"; };
-		58B197E61947906E00B9D9FA /* dictDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dictDataStore.m; sourceTree = "<group>"; };
-		58B197E8194790D000B9D9FA /* dict.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dict.json; sourceTree = "<group>"; };
+		58B197E51947906E00B9D9FA /* dictDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = dictDataStore.h; path = Dictionaeryredux/dictDataStore.h; sourceTree = "<group>"; };
+		58B197E61947906E00B9D9FA /* dictDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = dictDataStore.m; path = Dictionaeryredux/dictDataStore.m; sourceTree = "<group>"; };
+		58B197E8194790D000B9D9FA /* dict.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = dict.json; path = Dictionaeryredux/dict.json; sourceTree = "<group>"; };
 		58C31BA0194B7B58006FFA5C /* DictionaeryMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DictionaeryMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		58C31BA1194B7B58006FFA5C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
-		58C31BA4194B7B58006FFA5C /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		58C31BA5194B7B58006FFA5C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		58C31BA6194B7B58006FFA5C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		58C31BA9194B7B58006FFA5C /* DictionaeryMac-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DictionaeryMac-Info.plist"; sourceTree = "<group>"; };
 		58C31BAB194B7B58006FFA5C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		58C31BAD194B7B58006FFA5C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -81,6 +82,7 @@
 		58C31BB7194B7B58006FFA5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		58C31BB9194B7B58006FFA5C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		58DD63CD195766690079758A /* core.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = core.html; sourceTree = "<group>"; };
+		58DD63CF19576B350079758A /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/WebKit.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,16 +100,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58C31BA2194B7B58006FFA5C /* Cocoa.framework in Frameworks */,
+				58651E911958CA7900CD3BA6 /* Cocoa.framework in Frameworks */,
+				58DD63D019576B350079758A /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		584468B01959CC57002561C6 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				584468B11959CC6B002561C6 /* Supporting Files */,
+				58B197E51947906E00B9D9FA /* dictDataStore.h */,
+				58B197E61947906E00B9D9FA /* dictDataStore.m */,
+				584468B21959CCA4002561C6 /* dictTraumaeWord.h */,
+				584468B31959CCA4002561C6 /* dictTraumaeWord.m */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		584468B11959CC6B002561C6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				58931CFB1947F8F800888967 /* Septambres-Revisit.ttf */,
+				58B197E8194790D000B9D9FA /* dict.json */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		58B1979E1947879000B9D9FA = {
 			isa = PBXGroup;
 			children = (
+				584468B01959CC57002561C6 /* Core */,
 				58B197B01947879100B9D9FA /* Dictionaeryredux */,
 				58C31BA7194B7B58006FFA5C /* DictionaeryMac */,
 				58B197A91947879000B9D9FA /* Frameworks */,
@@ -127,12 +152,11 @@
 		58B197A91947879000B9D9FA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				58651E901958CA7900CD3BA6 /* Cocoa.framework */,
+				58DD63CF19576B350079758A /* WebKit.framework */,
 				58B197AA1947879000B9D9FA /* Foundation.framework */,
 				58B197AC1947879100B9D9FA /* CoreGraphics.framework */,
 				58B197AE1947879100B9D9FA /* UIKit.framework */,
-				58B197CF1947879100B9D9FA /* XCTest.framework */,
-				58C31BA1194B7B58006FFA5C /* Cocoa.framework */,
-				58C31BA3194B7B58006FFA5C /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -145,8 +169,6 @@
 				58B197BC1947879100B9D9FA /* Main_iPhone.storyboard */,
 				58B197C21947879100B9D9FA /* dictMasterViewController.h */,
 				58B197C31947879100B9D9FA /* dictMasterViewController.m */,
-				58B197E51947906E00B9D9FA /* dictDataStore.h */,
-				58B197E61947906E00B9D9FA /* dictDataStore.m */,
 				58B197C81947879100B9D9FA /* Images.xcassets */,
 				58B197B11947879100B9D9FA /* Supporting Files */,
 			);
@@ -156,24 +178,12 @@
 		58B197B11947879100B9D9FA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				58931CFB1947F8F800888967 /* Septambres-Revisit.ttf */,
-				58B197E8194790D000B9D9FA /* dict.json */,
 				58B197B21947879100B9D9FA /* Dictionaeryredux-Info.plist */,
 				58B197B31947879100B9D9FA /* InfoPlist.strings */,
 				58B197B61947879100B9D9FA /* main.m */,
 				58B197B81947879100B9D9FA /* Dictionaeryredux-Prefix.pch */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		58C31BA3194B7B58006FFA5C /* Other Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				58C31BA4194B7B58006FFA5C /* AppKit.framework */,
-				58C31BA5194B7B58006FFA5C /* CoreData.framework */,
-				58C31BA6194B7B58006FFA5C /* Foundation.framework */,
-			);
-			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
 		58C31BA7194B7B58006FFA5C /* DictionaeryMac */ = {
@@ -302,6 +312,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				584468B41959CCA4002561C6 /* dictTraumaeWord.m in Sources */,
 				58B197C41947879100B9D9FA /* dictMasterViewController.m in Sources */,
 				58B197E71947906E00B9D9FA /* dictDataStore.m in Sources */,
 				58B197BB1947879100B9D9FA /* dictAppDelegate.m in Sources */,
@@ -316,6 +327,7 @@
 				58C31BB5194B7B58006FFA5C /* dictAppDelegate.m in Sources */,
 				58ABC6E0194BAEE3004232D6 /* dictDataStore.m in Sources */,
 				58C31BAE194B7B58006FFA5C /* main.m in Sources */,
+				584468B51959CCA4002561C6 /* dictTraumaeWord.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

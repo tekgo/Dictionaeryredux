@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="14A261i" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
+        <plugIn identifier="com.apple.WebKitIBPlugin" version="5056"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -13,11 +14,11 @@
         <customObject id="-3" userLabel="Application"/>
         <customObject id="Voe-Tx-rLC" customClass="dictAppDelegate">
             <connections>
-                <outlet property="homeView" destination="lZm-df-qbq" id="PD7-Hn-XyX"/>
+                <outlet property="homeView" destination="lZm-df-qbq" id="sn6-Ij-ZBX"/>
+                <outlet property="myWebView" destination="lfL-qX-FmI" id="Ogh-Ev-iZs"/>
                 <outlet property="navView" destination="72W-Qb-Ei0" id="oZL-5j-qRE"/>
                 <outlet property="searchView" destination="rq2-go-4lk" id="xuA-pa-90c"/>
                 <outlet property="tableView" destination="eri-gl-N4D" id="x3G-Xe-lj4"/>
-                <outlet property="textView" destination="YkF-w9-7lR" id="C3q-jc-YwK"/>
                 <outlet property="toolbar" destination="TLp-bi-Vkx" id="cYP-aG-hE2"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
@@ -485,41 +486,19 @@
                                 <rect key="frame" x="162" y="0.0" width="326" height="399"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
-                                    <scrollView appearanceType="aqua" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jbU-zb-UgC">
+                                    <webView appearanceType="aqua" translatesAutoresizingMaskIntoConstraints="NO" id="lfL-qX-FmI">
                                         <rect key="frame" x="0.0" y="0.0" width="326" height="399"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <clipView key="contentView" id="HXt-05-xz3">
-                                            <rect key="frame" x="0.0" y="0.0" width="326" height="399"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <subviews>
-                                                <textView editable="NO" findStyle="panel" allowsDocumentBackgroundColorChange="YES" allowsUndo="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" id="YkF-w9-7lR">
-                                                    <rect key="frame" x="0.0" y="0.0" width="326" height="399"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <size key="minSize" width="326" height="399"/>
-                                                    <size key="maxSize" width="463" height="10000000"/>
-                                                    <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                    <size key="minSize" width="326" height="399"/>
-                                                    <size key="maxSize" width="463" height="10000000"/>
-                                                </textView>
-                                            </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </clipView>
-                                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="1Tt-5Z-PmA">
-                                            <rect key="frame" x="-100" y="-100" width="87" height="18"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </scroller>
-                                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="ARc-FF-Fvm">
-                                            <rect key="frame" x="310" y="0.0" width="16" height="399"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </scroller>
-                                    </scrollView>
+                                        <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12">
+                                            <nil key="identifier"/>
+                                        </webPreferences>
+                                    </webView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="jbU-zb-UgC" secondAttribute="bottom" id="VCR-H1-bjq"/>
-                                    <constraint firstItem="jbU-zb-UgC" firstAttribute="top" secondItem="wTa-Hm-zGj" secondAttribute="top" id="iPf-BZ-0JE"/>
-                                    <constraint firstItem="jbU-zb-UgC" firstAttribute="leading" secondItem="wTa-Hm-zGj" secondAttribute="leading" id="kZs-bw-i7x"/>
-                                    <constraint firstAttribute="trailing" secondItem="jbU-zb-UgC" secondAttribute="trailing" id="lJh-W5-QvA"/>
+                                    <constraint firstAttribute="trailing" secondItem="lfL-qX-FmI" secondAttribute="trailing" id="7XV-SA-wOI"/>
+                                    <constraint firstItem="lfL-qX-FmI" firstAttribute="leading" secondItem="wTa-Hm-zGj" secondAttribute="leading" id="ARH-p5-Tyf"/>
+                                    <constraint firstAttribute="bottom" secondItem="lfL-qX-FmI" secondAttribute="bottom" id="FLX-9u-uEV"/>
+                                    <constraint firstItem="lfL-qX-FmI" firstAttribute="top" secondItem="wTa-Hm-zGj" secondAttribute="top" id="cEB-vh-jGG"/>
                                 </constraints>
                             </customView>
                         </subviews>
@@ -596,6 +575,9 @@
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="goHome:" target="Voe-Tx-rLC" id="Pkl-UC-msC"/>
+                    </connections>
                 </button>
             </subviews>
         </customView>

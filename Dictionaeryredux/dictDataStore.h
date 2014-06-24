@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "dictTraumaeWord.h"
 
 @interface dictDataStore : NSObject
 {
@@ -15,10 +16,16 @@
     
     NSDictionary *nodeDict;
     
+    NSArray* words;
+    
     NSURLConnection* apiConnection;
+    
+    
 }
 + (id)sharedDataStore;
 
+- (NSArray*) DataforFilterWithParents:(NSString*)filter maxLength:(int)length;
 - (NSArray*) DataforFilter:(NSString*)filter maxLength:(int)length;
 - (NSArray*) DataForSearch:(NSString*)searchString;
+-(dictTraumaeWord*)getWord:(NSString*)word;
 @end
