@@ -38,7 +38,18 @@
     
     [self goHome:self];
     [myWebView setPolicyDelegate:self];
+    [myWebView setFrameLoadDelegate:self];
     
+}
+
+- (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame {
+    NSScrollView *scrollView = [[[[myWebView mainFrame] frameView] documentView] enclosingScrollView];
+    [[scrollView documentView] scrollPoint:saveScrollPosition];
+}
+
+- (void)webView:(WebView *)sender didCommitLoadForFrame:(WebFrame *)frame {
+    NSScrollView *scrollView = [[[[myWebView mainFrame] frameView] documentView] enclosingScrollView];
+    [[scrollView documentView] scrollPoint:saveScrollPosition];
 }
 
 - (void)webView:(WebView *)sender decidePolicyForNavigationAction:(NSDictionary *)actionInformation request:(NSURLRequest *)request frame:(WebFrame *)frame decisionListener:(id<WebPolicyDecisionListener>)listener {
@@ -50,7 +61,7 @@
             [[NSWorkspace sharedWorkspace] openURL:[actionInformation objectForKey:WebActionOriginalURLKey]];
             [listener ignore];
         } else {
-            NSString *lastPath = [[[request URL] lastPathComponent] lowercaseString];
+            NSString *lastPath = [[[request URL] absoluteString] lowercaseString];
             if([lastPath  rangeOfString:@"traumae:"].location != NSNotFound) {
                 NSString* traumaeWord = [[lastPath componentsSeparatedByString:@":"] lastObject];
                 [self selectWord:traumaeWord forced:true];
@@ -74,10 +85,7 @@
 }
 
 -(IBAction)goHome:(id)sender {
-    NSString* filePath = [[NSBundle mainBundle] pathForResource:@"core" ofType:@"html"];
-    NSURL* fileURL = [NSURL fileURLWithPath:filePath];
-    NSURLRequest* request = [NSURLRequest requestWithURL:fileURL];
-    [[myWebView mainFrame] loadRequest:request];
+    [self loadWord:[[dictTraumaeWord alloc] init]];
     [self setFilter:@""];
 }
 
@@ -104,20 +112,17 @@
 }
 
 -(void)setFilter:(NSString*)newFilter {
-    if(filterIndex<_filters.count && _filters.count>0) {
-        [_filters removeObjectsInRange:(NSRange){filterIndex, _filters.count-filterIndex}];
-    }
     if(![_currentFilter isEqualToString:newFilter])
         if(!_currentFilter || !newFilter || [_currentFilter rangeOfString:@"!"].location!=0 || [newFilter rangeOfString:@"!"].location!=0)
-            [_filters addObject:_currentFilter];
-    filterIndex = (int)_filters.count;
+            _lastFilter=_currentFilter;
     _currentFilter = newFilter;
     
+    if([newFilter rangeOfString:@"!"].location==0) {
+        [_searchField setStringValue:[[newFilter componentsSeparatedByString:@"!"] lastObject]];
+    }
     
     if([_currentFilter isEqualToString:@"!"] && _filters.count>0) {
-        _currentFilter = [_filters lastObject];
-        [_filters removeLastObject];
-        filterIndex = (int)_filters.count;
+        _currentFilter = _lastFilter;
         [self setFilter:_currentFilter];
     }
     else {
@@ -127,26 +132,127 @@
 
 -(IBAction)navAction:(id)sender {
         NSSegmentedControl* toggleNav = sender; // this is your segmented control
+    BOOL indexChanged = false;
+    [self saveScrollPosition];
         if ([toggleNav selectedSegment] == 0) {
             if(filterIndex>0) {
                 filterIndex--;
-                _currentFilter = [_filters objectAtIndex:filterIndex];
-                [self refreshData];
+                indexChanged=true;
+                //_currentFilter = [_filters objectAtIndex:filterIndex];
+                //[self refreshData];
             }
         } else if ([toggleNav selectedSegment] == 1) {
             if(filterIndex+1<_filters.count) {
                 filterIndex++;
-                _currentFilter = [_filters objectAtIndex:filterIndex];
-                [self refreshData];
+                
+                indexChanged=true;
+                //[self refreshData];
             }
         }
+    if(indexChanged) {
+        NSDictionary *tempDict =[_filters objectAtIndex:filterIndex];
+        
+        [self setFilter:tempDict[@"filter"]];
+        [self showWord: tempDict[@"word"]];
+        
+        [self restoreScrollPosition:tempDict[@"scrollPosition"]];
+    }
+}
+
+-(void)showWord:(dictTraumaeWord*)word {
+    if(word.valid) {
+        NSMutableArray* elements = [NSMutableArray new];
+        [elements addObject:[NSString stringWithFormat:@"<h1>%@ <span style='font-family:Septambres-Revisit'>%@</span></h1>",[word.traumae capitalizedString],word.qwertyString]];
+        if(![word.traumae isEqualToString:word.adultspeak])
+            [elements addObject:[NSString stringWithFormat:@"<h2>%@</h2>",[word.adultspeak capitalizedString]]];
+        
+        [elements addObject:[NSString stringWithFormat:@"<ul><li>%@</ul>",[word.alternatives componentsJoinedByString:@"<li>"]]];
+        
+        if(word.traumae.length>2) {
+            NSMutableArray *comp = [NSMutableArray new];
+            for(int i=0;i<word.traumae.length/2;i++) {
+                NSString *tempString = [word.traumae substringWithRange:(NSRange){i*2,2}];
+                dictTraumaeWord *tempWord = [[dictDataStore sharedDataStore] getWord:tempString];
+                [comp addObject:tempWord.english];
+            }
+            [elements addObject:[NSString stringWithFormat:@"<p>%@</p>",[comp componentsJoinedByString:@"."]]];
+        }
+        
+        if(word.children>0) {
+            NSArray *children = [[dictDataStore sharedDataStore] DataforFilter:word.traumae maxLength:(int)word.traumae.length+2];
+            NSMutableArray *links = [NSMutableArray new];
+            for(dictTraumaeWord* child in children) {
+                if(child.traumae.length>word.traumae.length) {
+                    [links addObject:[NSString stringWithFormat:@"<a href='traumae:%@'>%@</a>",child.traumae,child.traumae]];
+                    
+                }
+            }
+            [elements addObject:[NSString stringWithFormat:@"<p>%@</p>",[links componentsJoinedByString:@", "]]];
+        }
+        
+        [[myWebView mainFrame] loadHTMLString:[elements componentsJoinedByString:@"\n"] baseURL:nil];
+        int index=0;
+        for(dictTraumaeWord* thisWord in _objects) {
+            if ([thisWord.traumae isEqualToString:word.traumae]) {
+                [_tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:index] byExtendingSelection:false];
+            }
+            index++;
+            
+        }
+    }
+    else {
+        NSString* filePath = [[NSBundle mainBundle] pathForResource:@"core" ofType:@"html"];
+        NSURL* fileURL = [NSURL fileURLWithPath:filePath];
+        NSURLRequest* request = [NSURLRequest requestWithURL:fileURL];
+        [[myWebView mainFrame] loadRequest:request];
+    }
+}
+
+-(void)saveScrollPosition {
+    ;
+    if(_filters.count>0 && filterIndex<_filters.count) {
+        NSScrollView *scrollView = [[[[myWebView mainFrame] frameView] documentView] enclosingScrollView];
+        NSRect scrollViewBounds = [[scrollView contentView] bounds];
+        NSPoint scrollPosition = scrollViewBounds.origin;
+        NSValue *pointValue =[NSValue valueWithPoint:scrollPosition];
+        
+        if(scrollPosition.x!=0 || scrollPosition.y!=0) {
+            //NSLog([pointValue description]);
+        _filters[filterIndex][@"scrollPosition"]= pointValue;
+        }
+    }
+}
+
+-(void)restoreScrollPosition:(NSValue*)pointValue {
+    saveScrollPosition = CGPointMake(0, 0);
+    if(pointValue) {
+        NSScrollView *scrollView = [[[[myWebView mainFrame] frameView] documentView] enclosingScrollView];
+        //NSLog([pointValue description]);
+        saveScrollPosition =[pointValue pointValue];
+        [[scrollView documentView] scrollPoint:[pointValue pointValue]];
+    }
 }
 
 -(void)loadWord:(dictTraumaeWord*)word {
-    NSMutableArray* elements = [NSMutableArray new];
-    [elements addObject:[NSString stringWithFormat:@"<p>%@</p>",[word.traumae capitalizedString]]];
-    [elements addObject:[NSString stringWithFormat:@"<p style='font-family:Septambres-Revisit'>%@</p>",word.qwertyString]];
-    [[myWebView mainFrame] loadHTMLString:[elements componentsJoinedByString:@"\n"] baseURL:nil];
+    
+    if(_filters.count!=0 && _filters[filterIndex][@"word"]==word)
+        return;
+    
+    if(_filters.count!=0 && !((dictTraumaeWord*)_filters[filterIndex][@"word"]).valid && !word.valid)
+        return;
+    
+    if(filterIndex+1<_filters.count) {
+        [_filters removeObjectsInRange:(NSRange){filterIndex+1,_filters.count-(filterIndex+1)}];
+    }
+    [self saveScrollPosition];
+    if(_filters.count==0 || [_filters lastObject][@"word"]!=word) {
+        NSMutableDictionary* tempDict = [NSMutableDictionary new];
+        tempDict[@"word"]=word;
+        tempDict[@"filter"]=_currentFilter;
+        [_filters addObject:tempDict];
+        filterIndex = (int)_filters.count-1;
+    }
+    [self showWord:word];
 }
 
 -(void)selectItem:(dictTraumaeWord*)object {
@@ -171,6 +277,8 @@
     NSTextField *textField = [view viewWithTag:100];
     [textField setStringValue:[object.traumae capitalizedString]];
     
+    textField = [view viewWithTag:200];
+    [textField setStringValue:[object.english capitalizedString]];
     
     return view;
     

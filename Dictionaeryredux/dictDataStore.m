@@ -117,6 +117,23 @@
         
         
         }
+    
+    tempArr =  [NSMutableArray arrayWithArray:[tempArr sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+        NSString *first = ((dictTraumaeWord*)a).sortString;
+        NSString *second = ((dictTraumaeWord*)b).sortString;
+        return [first compare:second];
+    }]];
+    
+    
+    
+    tempArr =  [NSMutableArray arrayWithArray:[tempArr sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+        NSString *first = ((dictTraumaeWord*)a).traumae;
+        NSString *second = ((dictTraumaeWord*)b).traumae;
+        NSNumber *firsta = [NSNumber numberWithLong:first.length];
+        NSNumber *seconda = [NSNumber numberWithLong:second.length];
+        return [firsta compare:seconda];
+    }]];
+    
 	words = tempArr;
     [[NSNotificationCenter defaultCenter] postNotificationName:@"dictDataStoreUpdate" object:self];
 }
@@ -248,7 +265,7 @@
                 [tempArrays[0] addObject:word];
                 added=true;
             }
-            if([word.adultspeak  rangeOfString:searchString].location == 0) {
+            if(!added && [word.adultspeak  rangeOfString:searchString].location == 0) {
                 [tempArrays[0] addObject:word];
                 added=true;
             }
