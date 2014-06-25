@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "58C31B9F194B7B58006FFA5C"
-               BuildableName = "DictionaeryMac.app"
+               BuildableName = "Dictionaery.app"
                BlueprintName = "Dictionaery"
                ReferencedContainer = "container:Dictionaeryredux.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "58C31B9F194B7B58006FFA5C"
-            BuildableName = "DictionaeryMac.app"
+            BuildableName = "Dictionaery.app"
             BlueprintName = "Dictionaery"
             ReferencedContainer = "container:Dictionaeryredux.xcodeproj">
          </BuildableReference>
@@ -52,7 +52,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "58C31B9F194B7B58006FFA5C"
-            BuildableName = "DictionaeryMac.app"
+            BuildableName = "Dictionaery.app"
             BlueprintName = "Dictionaery"
             ReferencedContainer = "container:Dictionaeryredux.xcodeproj">
          </BuildableReference>
@@ -70,7 +70,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "58C31B9F194B7B58006FFA5C"
-            BuildableName = "DictionaeryMac.app"
+            BuildableName = "Dictionaery.app"
             BlueprintName = "Dictionaery"
             ReferencedContainer = "container:Dictionaeryredux.xcodeproj">
          </BuildableReference>

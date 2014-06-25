@@ -33,7 +33,7 @@
     }
     if(![tempDict[@"english"] isKindOfClass:[NSString class]]) {
         if([tempDict[@"english"] isKindOfClass:[NSNumber class]]) {
-            tempDict[@"english"] = [NSString stringWithFormat:@"%ld",[(NSNumber*)tempDict[@"english"] integerValue]];
+            tempDict[@"english"] = [NSString stringWithFormat:@"%ld",(long)[(NSNumber*)tempDict[@"english"] integerValue]];
         }
     }
     
