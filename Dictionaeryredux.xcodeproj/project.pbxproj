@@ -234,9 +234,9 @@
 			productReference = 58B197A71947879000B9D9FA /* Dictionaeryredux.app */;
 			productType = "com.apple.product-type.application";
 		};
-		58C31B9F194B7B58006FFA5C /* DictionaeryMac */ = {
+		58C31B9F194B7B58006FFA5C /* Dictionaery */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 58C31BD0194B7B59006FFA5C /* Build configuration list for PBXNativeTarget "DictionaeryMac" */;
+			buildConfigurationList = 58C31BD0194B7B59006FFA5C /* Build configuration list for PBXNativeTarget "Dictionaery" */;
 			buildPhases = (
 				58C31B9C194B7B58006FFA5C /* Sources */,
 				58C31B9D194B7B58006FFA5C /* Frameworks */,
@@ -247,7 +247,7 @@
 			);
 			dependencies = (
 			);
-			name = DictionaeryMac;
+			name = Dictionaery;
 			productName = DictionaeryMac;
 			productReference = 58C31BA0194B7B58006FFA5C /* DictionaeryMac.app */;
 			productType = "com.apple.product-type.application";
@@ -276,7 +276,7 @@
 			projectRoot = "";
 			targets = (
 				58B197A61947879000B9D9FA /* Dictionaeryredux */,
-				58C31B9F194B7B58006FFA5C /* DictionaeryMac */,
+				58C31B9F194B7B58006FFA5C /* Dictionaery */,
 			);
 		};
 /* End PBXProject section */
@@ -547,7 +547,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		58C31BD0194B7B59006FFA5C /* Build configuration list for PBXNativeTarget "DictionaeryMac" */ = {
+		58C31BD0194B7B59006FFA5C /* Build configuration list for PBXNativeTarget "Dictionaery" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				58C31BCC194B7B59006FFA5C /* Debug */,
