@@ -73,7 +73,7 @@
 		58B197E51947906E00B9D9FA /* dictDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = dictDataStore.h; path = Dictionaeryredux/dictDataStore.h; sourceTree = "<group>"; };
 		58B197E61947906E00B9D9FA /* dictDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = dictDataStore.m; path = Dictionaeryredux/dictDataStore.m; sourceTree = "<group>"; };
 		58B197E8194790D000B9D9FA /* dict.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = dict.json; path = Dictionaeryredux/dict.json; sourceTree = "<group>"; };
-		58C31BA0194B7B58006FFA5C /* DictionaeryMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DictionaeryMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		58C31BA0194B7B58006FFA5C /* Dictionaery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dictionaery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58C31BA9194B7B58006FFA5C /* DictionaeryMac-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DictionaeryMac-Info.plist"; sourceTree = "<group>"; };
 		58C31BAB194B7B58006FFA5C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		58C31BAD194B7B58006FFA5C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -146,7 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				58B197A71947879000B9D9FA /* Dictionaeryredux.app */,
-				58C31BA0194B7B58006FFA5C /* DictionaeryMac.app */,
+				58C31BA0194B7B58006FFA5C /* Dictionaery.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -249,7 +249,7 @@
 			);
 			name = Dictionaery;
 			productName = DictionaeryMac;
-			productReference = 58C31BA0194B7B58006FFA5C /* DictionaeryMac.app */;
+			productReference = 58C31BA0194B7B58006FFA5C /* Dictionaery.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
