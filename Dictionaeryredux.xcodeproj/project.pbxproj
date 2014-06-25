@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		584468B41959CCA4002561C6 /* dictTraumaeWord.m in Sources */ = {isa = PBXBuildFile; fileRef = 584468B31959CCA4002561C6 /* dictTraumaeWord.m */; };
 		584468B51959CCA4002561C6 /* dictTraumaeWord.m in Sources */ = {isa = PBXBuildFile; fileRef = 584468B31959CCA4002561C6 /* dictTraumaeWord.m */; };
+		58566579195A7DB600611455 /* template.html in Resources */ = {isa = PBXBuildFile; fileRef = 58566578195A7DB600611455 /* template.html */; };
 		58651E911958CA7900CD3BA6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58651E901958CA7900CD3BA6 /* Cocoa.framework */; };
 		58931CFD1947F8F800888967 /* Septambres-Revisit.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58931CFB1947F8F800888967 /* Septambres-Revisit.ttf */; };
 		58ABC6E0194BAEE3004232D6 /* dictDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B197E61947906E00B9D9FA /* dictDataStore.m */; };
@@ -52,6 +53,7 @@
 /* Begin PBXFileReference section */
 		584468B21959CCA4002561C6 /* dictTraumaeWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dictTraumaeWord.h; sourceTree = "<group>"; };
 		584468B31959CCA4002561C6 /* dictTraumaeWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dictTraumaeWord.m; sourceTree = "<group>"; };
+		58566578195A7DB600611455 /* template.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = template.html; sourceTree = "<group>"; };
 		58651E901958CA7900CD3BA6 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		58931CFB1947F8F800888967 /* Septambres-Revisit.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Septambres-Revisit.ttf"; path = "Dictionaeryredux/Septambres-Revisit.ttf"; sourceTree = "<group>"; };
 		58B197A71947879000B9D9FA /* Dictionaeryredux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dictionaeryredux.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -192,6 +194,7 @@
 				58C31BB3194B7B58006FFA5C /* dictAppDelegate.h */,
 				58C31BB4194B7B58006FFA5C /* dictAppDelegate.m */,
 				58DD63CD195766690079758A /* core.html */,
+				58566578195A7DB600611455 /* template.html */,
 				58C31BB6194B7B58006FFA5C /* MainMenu.xib */,
 				58C31BB9194B7B58006FFA5C /* Images.xcassets */,
 				58C31BA8194B7B58006FFA5C /* Supporting Files */,
@@ -299,6 +302,7 @@
 				58DD63CA19575FEA0079758A /* Septambres-Revisit.ttf in Resources */,
 				58C31BAC194B7B58006FFA5C /* InfoPlist.strings in Resources */,
 				58C31BBA194B7B58006FFA5C /* Images.xcassets in Resources */,
+				58566579195A7DB600611455 /* template.html in Resources */,
 				58C31BB2194B7B58006FFA5C /* Credits.rtf in Resources */,
 				58ABC6E1194BB098004232D6 /* dict.json in Resources */,
 				58C31BB8194B7B58006FFA5C /* MainMenu.xib in Resources */,

@@ -22,6 +22,8 @@
     IBOutlet NSView *homeView;
     IBOutlet WebView *myWebView;
     NSPoint saveScrollPosition;
+    
+    NSString *htmlTemplate;
 }
 
 @property (assign) IBOutlet NSWindow *window;

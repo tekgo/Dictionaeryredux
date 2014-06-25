@@ -17,6 +17,11 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+    
+    NSString* filePath = [[NSBundle mainBundle] pathForResource:@"template" ofType:@"html"];
+    NSURL* fileURL = [NSURL fileURLWithPath:filePath];
+    NSError* err;
+    htmlTemplate = [NSString stringWithContentsOfURL:fileURL encoding:NSUTF8StringEncoding error:&err];
     // Insert code here to initialize your application
     _filters = [NSMutableArray new];
     filterIndex = 0;
@@ -39,6 +44,8 @@
     [self goHome:self];
     [myWebView setPolicyDelegate:self];
     [myWebView setFrameLoadDelegate:self];
+    
+    
     
 }
 
@@ -164,7 +171,7 @@
         NSMutableArray* elements = [NSMutableArray new];
         [elements addObject:[NSString stringWithFormat:@"<h1>%@ <span style='font-family:Septambres-Revisit'>%@</span></h1>",[word.traumae capitalizedString],word.qwertyString]];
         if(![word.traumae isEqualToString:word.adultspeak])
-            [elements addObject:[NSString stringWithFormat:@"<h2>%@</h2>",[word.adultspeak capitalizedString]]];
+            [elements addObject:[NSString stringWithFormat:@"<h2><em>%@</em></h2>",[word.adultspeak capitalizedString]]];
         
         [elements addObject:[NSString stringWithFormat:@"<ul><li>%@</ul>",[word.alternatives componentsJoinedByString:@"<li>"]]];
         
@@ -187,10 +194,12 @@
                     
                 }
             }
-            [elements addObject:[NSString stringWithFormat:@"<p>%@</p>",[links componentsJoinedByString:@", "]]];
+            [elements addObject:[NSString stringWithFormat:@"<p><b>Children</b><br/>%@</p>",[links componentsJoinedByString:@", "]]];
         }
         
-        [[myWebView mainFrame] loadHTMLString:[elements componentsJoinedByString:@"\n"] baseURL:nil];
+        [[myWebView mainFrame] loadHTMLString:[htmlTemplate stringByReplacingOccurrencesOfString:@"<*content*>" withString:[elements componentsJoinedByString:@"\n"]]  baseURL:nil];
+        
+        
         int index=0;
         for(dictTraumaeWord* thisWord in _objects) {
             if ([thisWord.traumae isEqualToString:word.traumae]) {
