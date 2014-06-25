@@ -169,9 +169,12 @@
 -(void)showWord:(dictTraumaeWord*)word {
     if(word.valid) {
         NSMutableArray* elements = [NSMutableArray new];
-        [elements addObject:[NSString stringWithFormat:@"<h1>%@ <span style='font-family:Septambres-Revisit'>%@</span></h1>",[word.traumae capitalizedString],word.qwertyString]];
-        if(![word.traumae isEqualToString:word.adultspeak])
-            [elements addObject:[NSString stringWithFormat:@"<h2><em>%@</em></h2>",[word.adultspeak capitalizedString]]];
+        NSString *adultSpeak = @"";
+        //if(![word.traumae isEqualToString:word.adultspeak])
+            adultSpeak = word.adultspeak;
+        [elements addObject:[NSString stringWithFormat:@"<div class='traumword'>%@</div><div class='word'>%@ <span class='adultspeak'>%@</span></div>",word.qwertyString,word.traumae,adultSpeak]];
+        /*if(![word.traumae isEqualToString:word.adultspeak])
+            [elements addObject:[NSString stringWithFormat:@"<div class='adultspeak'>%@</div>",word.adultspeak ]];*/
         
         [elements addObject:[NSString stringWithFormat:@"<ul><li>%@</ul>",[word.alternatives componentsJoinedByString:@"<li>"]]];
         
@@ -190,11 +193,11 @@
             NSMutableArray *links = [NSMutableArray new];
             for(dictTraumaeWord* child in children) {
                 if(child.traumae.length>word.traumae.length) {
-                    [links addObject:[NSString stringWithFormat:@"<a href='traumae:%@'>%@</a>",child.traumae,child.traumae]];
+                    [links addObject:[NSString stringWithFormat:@"<li><a href='traumae:%@'>%@ - <span class='childefine'> %@</span></a>",child.traumae,child.traumae,child.english]];
                     
                 }
             }
-            [elements addObject:[NSString stringWithFormat:@"<p><b>Children</b><br/>%@</p>",[links componentsJoinedByString:@", "]]];
+            [elements addObject:[NSString stringWithFormat:@"<div class='header'>Children</div><ul class='childList' >%@</ul>",[links componentsJoinedByString:@" "]]];
         }
         
         [[myWebView mainFrame] loadHTMLString:[htmlTemplate stringByReplacingOccurrencesOfString:@"<*content*>" withString:[elements componentsJoinedByString:@"\n"]]  baseURL:nil];
@@ -308,7 +311,7 @@
         if(!object)
             return;
         if(object.traumae!=_currentFilter) {
-            if(object.children>0 || forced) {
+            if(object.children==-1 || forced) {
                 [self setFilter:object.traumae];
                 int index = 0;
                 for(dictTraumaeWord* thisWord in _objects) {
