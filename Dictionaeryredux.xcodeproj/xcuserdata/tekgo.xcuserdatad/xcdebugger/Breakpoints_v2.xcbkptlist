@@ -266,11 +266,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DictionaeryMac/dictAppDelegate.m"
-            timestampString = "425400293.34344"
+            timestampString = "425404195.508538"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "288"
-            endingLineNumber = "288"
+            startingLineNumber = "308"
+            endingLineNumber = "308"
             landmarkName = "-tableView:viewForTableColumn:row:"
             landmarkType = "5">
          </BreakpointContent>
@@ -282,11 +282,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DictionaeryMac/dictAppDelegate.m"
-            timestampString = "425400293.34344"
+            timestampString = "425404195.508538"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "282"
-            endingLineNumber = "282"
+            startingLineNumber = "302"
+            endingLineNumber = "302"
             landmarkName = "-numberOfRowsInTableView:"
             landmarkType = "5">
          </BreakpointContent>
@@ -298,11 +298,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DictionaeryMac/dictAppDelegate.m"
-            timestampString = "425400293.34344"
+            timestampString = "425404195.508538"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "289"
-            endingLineNumber = "289"
+            startingLineNumber = "309"
+            endingLineNumber = "309"
             landmarkName = "-tableView:viewForTableColumn:row:"
             landmarkType = "5">
          </BreakpointContent>
@@ -314,11 +314,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DictionaeryMac/dictAppDelegate.m"
-            timestampString = "425400293.34344"
+            timestampString = "425404195.508538"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "301"
-            endingLineNumber = "301"
+            startingLineNumber = "321"
+            endingLineNumber = "321"
             landmarkName = "-tableViewSelectionDidChange:"
             landmarkType = "5">
          </BreakpointContent>
@@ -330,11 +330,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DictionaeryMac/dictAppDelegate.m"
-            timestampString = "425400293.34344"
+            timestampString = "425404195.508538"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "309"
-            endingLineNumber = "309"
+            startingLineNumber = "329"
+            endingLineNumber = "329"
             landmarkName = "-selectWord:forced:"
             landmarkType = "5">
          </BreakpointContent>
@@ -346,11 +346,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DictionaeryMac/dictAppDelegate.m"
-            timestampString = "425400293.34344"
+            timestampString = "425404195.508538"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "312"
-            endingLineNumber = "312"
+            startingLineNumber = "332"
+            endingLineNumber = "332"
             landmarkName = "-selectWord:forced:"
             landmarkType = "5">
          </BreakpointContent>
@@ -552,11 +552,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DictionaeryMac/dictAppDelegate.m"
-            timestampString = "425400293.34344"
+            timestampString = "425404195.508538"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "226"
-            endingLineNumber = "226"
+            startingLineNumber = "245"
+            endingLineNumber = "245"
             landmarkName = "-saveScrollPosition"
             landmarkType = "5">
          </BreakpointContent>
@@ -568,11 +568,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DictionaeryMac/dictAppDelegate.m"
-            timestampString = "425400293.34344"
+            timestampString = "425404195.508538"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "240"
-            endingLineNumber = "240"
+            startingLineNumber = "259"
+            endingLineNumber = "259"
             landmarkName = "-restoreScrollPosition:"
             landmarkType = "5">
          </BreakpointContent>

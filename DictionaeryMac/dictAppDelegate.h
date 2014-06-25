@@ -21,6 +21,8 @@
     IBOutlet NSView *navView;
     IBOutlet NSView *homeView;
     IBOutlet WebView *myWebView;
+    IBOutlet NSButton *backButton;
+    IBOutlet NSButton *forwardButton;
     NSPoint saveScrollPosition;
     
     NSString *htmlTemplate;
@@ -33,6 +35,7 @@
 
 -(IBAction)goHome:(id)sender ;
 
--(IBAction)navAction:(id)sender;
+-(IBAction)goBack:(id)sender;
+-(IBAction)goForward:(id)sender;
 
 @end

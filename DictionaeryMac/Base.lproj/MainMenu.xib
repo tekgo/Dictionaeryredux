@@ -14,6 +14,8 @@
         <customObject id="-3" userLabel="Application"/>
         <customObject id="Voe-Tx-rLC" customClass="dictAppDelegate">
             <connections>
+                <outlet property="backButton" destination="iCj-Si-OOs" id="6wR-jk-kmG"/>
+                <outlet property="forwardButton" destination="5ds-4h-inK" id="GNt-Lo-1yk"/>
                 <outlet property="homeView" destination="lZm-df-qbq" id="sn6-Ij-ZBX"/>
                 <outlet property="myWebView" destination="lfL-qX-FmI" id="Ogh-Ev-iZs"/>
                 <outlet property="navView" destination="72W-Qb-Ei0" id="oZL-5j-qRE"/>
@@ -567,27 +569,31 @@
             </subviews>
         </customView>
         <customView id="72W-Qb-Ei0" userLabel="NavView">
-            <rect key="frame" x="0.0" y="0.0" width="59" height="27"/>
+            <rect key="frame" x="0.0" y="0.0" width="53" height="25"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <segmentedControl appearanceType="aqua" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kew-bm-YYI">
-                    <rect key="frame" x="2" y="0.0" width="57" height="25"/>
+                <button appearanceType="aqua" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iCj-Si-OOs">
+                    <rect key="frame" x="2" y="-1" width="25" height="25"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedRounded" trackingMode="momentary" id="gM2-zc-uJB">
+                    <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSGoLeftTemplate" imagePosition="only" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hG9-WJ-fHM">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
-                        <segments>
-                            <segment image="NSLeftFacingTriangleTemplate" width="25">
-                                <nil key="label"/>
-                            </segment>
-                            <segment image="NSRightFacingTriangleTemplate" width="25" tag="1">
-                                <nil key="label"/>
-                            </segment>
-                        </segments>
-                    </segmentedCell>
+                    </buttonCell>
                     <connections>
-                        <action selector="navAction:" target="Voe-Tx-rLC" id="biE-rL-I82"/>
+                        <action selector="goBack:" target="Voe-Tx-rLC" id="24G-sr-BRe"/>
                     </connections>
-                </segmentedControl>
+                </button>
+                <button appearanceType="aqua" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5ds-4h-inK">
+                    <rect key="frame" x="28" y="-1" width="25" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSGoRightTemplate" imagePosition="only" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="YRe-gi-yi8">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="goForward:" target="Voe-Tx-rLC" id="ETj-5p-lzy"/>
+                    </connections>
+                </button>
             </subviews>
         </customView>
         <customView id="lZm-df-qbq" userLabel="Homeview">
@@ -609,8 +615,8 @@
         </customView>
     </objects>
     <resources>
+        <image name="NSGoLeftTemplate" width="9" height="12"/>
+        <image name="NSGoRightTemplate" width="9" height="12"/>
         <image name="NSHomeTemplate" width="14" height="14"/>
-        <image name="NSLeftFacingTriangleTemplate" width="9" height="12"/>
-        <image name="NSRightFacingTriangleTemplate" width="9" height="12"/>
     </resources>
 </document>

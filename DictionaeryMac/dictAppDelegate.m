@@ -46,7 +46,7 @@
     [myWebView setFrameLoadDelegate:self];
     
     
-    
+    [self setButtonStates];
 }
 
 - (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame {
@@ -94,6 +94,7 @@
 -(IBAction)goHome:(id)sender {
     [self loadWord:[[dictTraumaeWord alloc] init]];
     [self setFilter:@""];
+    [self setButtonStates];
 }
 
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication {
@@ -137,18 +138,17 @@
     }
 }
 
--(IBAction)navAction:(id)sender {
-        NSSegmentedControl* toggleNav = sender; // this is your segmented control
+-(void)navAction:(int)direction {
     BOOL indexChanged = false;
     [self saveScrollPosition];
-        if ([toggleNav selectedSegment] == 0) {
+        if (direction==-1) {
             if(filterIndex>0) {
                 filterIndex--;
                 indexChanged=true;
                 //_currentFilter = [_filters objectAtIndex:filterIndex];
                 //[self refreshData];
             }
-        } else if ([toggleNav selectedSegment] == 1) {
+        } else if (direction==1) {
             if(filterIndex+1<_filters.count) {
                 filterIndex++;
                 
@@ -164,7 +164,26 @@
         
         [self restoreScrollPosition:tempDict[@"scrollPosition"]];
     }
+    [self setButtonStates];
 }
+-(IBAction)goBack:(id)sender {
+    [self navAction:-1];
+}
+-(IBAction)goForward:(id)sender {
+    [self navAction:1];
+}
+
+-(void)setButtonStates {
+    [forwardButton setEnabled:false];
+    [backButton setEnabled:false];
+    if(filterIndex>0 && _filters.count>1) {
+        [backButton setEnabled:true];
+    }
+    if(filterIndex+1<_filters.count && _filters.count>1) {
+        [forwardButton setEnabled:true];
+    }
+}
+
 
 -(void)showWord:(dictTraumaeWord*)word {
     if(word.valid) {
@@ -265,6 +284,7 @@
         filterIndex = (int)_filters.count-1;
     }
     [self showWord:word];
+    [self setButtonStates];
 }
 
 -(void)selectItem:(dictTraumaeWord*)object {
