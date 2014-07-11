@@ -206,6 +206,7 @@
 
 -(void)setFilter:(NSString*)filter {
     if(filter) {
+        [self navigationItem].rightBarButtonItem = nil;
         _objects = [[dictDataStore sharedDataStore] DataforFilter:filter maxLength:(int)filter.length+2];
         
         [self setTitle:[filter capitalizedString]];

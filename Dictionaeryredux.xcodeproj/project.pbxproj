@@ -12,6 +12,8 @@
 		58566579195A7DB600611455 /* template.html in Resources */ = {isa = PBXBuildFile; fileRef = 58566578195A7DB600611455 /* template.html */; };
 		58651E911958CA7900CD3BA6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58651E901958CA7900CD3BA6 /* Cocoa.framework */; };
 		58931CFD1947F8F800888967 /* Septambres-Revisit.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58931CFB1947F8F800888967 /* Septambres-Revisit.ttf */; };
+		58A3C29719706B960030643C /* dictAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A3C29619706B960030643C /* dictAboutViewController.m */; };
+		58A3C29919706CE10030643C /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = 58A3C29819706CE10030643C /* about.html */; };
 		58ABC6E0194BAEE3004232D6 /* dictDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B197E61947906E00B9D9FA /* dictDataStore.m */; };
 		58ABC6E1194BB098004232D6 /* dict.json in Resources */ = {isa = PBXBuildFile; fileRef = 58B197E8194790D000B9D9FA /* dict.json */; };
 		58B197AB1947879000B9D9FA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58B197AA1947879000B9D9FA /* Foundation.framework */; };
@@ -56,6 +58,9 @@
 		58566578195A7DB600611455 /* template.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = template.html; sourceTree = "<group>"; };
 		58651E901958CA7900CD3BA6 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		58931CFB1947F8F800888967 /* Septambres-Revisit.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Septambres-Revisit.ttf"; path = "Dictionaeryredux/Septambres-Revisit.ttf"; sourceTree = "<group>"; };
+		58A3C29519706B960030643C /* dictAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dictAboutViewController.h; sourceTree = "<group>"; };
+		58A3C29619706B960030643C /* dictAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dictAboutViewController.m; sourceTree = "<group>"; };
+		58A3C29819706CE10030643C /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
 		58B197A71947879000B9D9FA /* Dictionaeryredux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dictionaeryredux.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58B197AA1947879000B9D9FA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		58B197AC1947879100B9D9FA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -171,6 +176,9 @@
 				58B197BC1947879100B9D9FA /* Main_iPhone.storyboard */,
 				58B197C21947879100B9D9FA /* dictMasterViewController.h */,
 				58B197C31947879100B9D9FA /* dictMasterViewController.m */,
+				58A3C29519706B960030643C /* dictAboutViewController.h */,
+				58A3C29619706B960030643C /* dictAboutViewController.m */,
+				58A3C29819706CE10030643C /* about.html */,
 				58B197C81947879100B9D9FA /* Images.xcassets */,
 				58B197B11947879100B9D9FA /* Supporting Files */,
 			);
@@ -286,6 +294,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58A3C29919706CE10030643C /* about.html in Resources */,
 				58B197C91947879100B9D9FA /* Images.xcassets in Resources */,
 				58B197E9194790D000B9D9FA /* dict.json in Resources */,
 				58B197BE1947879100B9D9FA /* Main_iPhone.storyboard in Resources */,
@@ -316,6 +325,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58A3C29719706B960030643C /* dictAboutViewController.m in Sources */,
 				584468B41959CCA4002561C6 /* dictTraumaeWord.m in Sources */,
 				58B197C41947879100B9D9FA /* dictMasterViewController.m in Sources */,
 				58B197E71947906E00B9D9FA /* dictDataStore.m in Sources */,
@@ -461,6 +471,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Dictionaeryredux/Dictionaeryredux-Prefix.pch";
 				INFOPLIST_FILE = "Dictionaeryredux/Dictionaeryredux-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = Dictionaeryredux;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -475,6 +487,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Dictionaeryredux/Dictionaeryredux-Prefix.pch";
 				INFOPLIST_FILE = "Dictionaeryredux/Dictionaeryredux-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = Dictionaeryredux;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;

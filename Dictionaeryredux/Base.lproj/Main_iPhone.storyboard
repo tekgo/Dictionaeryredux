@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="14A238x" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="rS3-R9-Ivy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="14A283o" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="rS3-R9-Ivy">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -18,6 +18,65 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eq9-QA-ai8" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1" y="64"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Jlr-TX-l5f">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="qZS-po-SjG" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DVV-GW-hhn">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="MaM-Ov-GMC" kind="relationship" relationship="rootViewController" id="kRj-sg-EWi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aut-cB-Pdb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-29" y="731"/>
+        </scene>
+        <!--Dict About View Controller - About-->
+        <scene sceneID="cVN-0y-KJ3">
+            <objects>
+                <viewController id="MaM-Ov-GMC" customClass="dictAboutViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cbi-B6-Bxd"/>
+                        <viewControllerLayoutGuide type="bottom" id="NaH-lr-lwX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JSh-uI-7Wu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView appearanceType="aqua" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vs6-qU-K7r">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="MaM-Ov-GMC" id="fs0-VX-fnS"/>
+                                </connections>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="vs6-qU-K7r" secondAttribute="trailing" id="O3z-xq-uku"/>
+                            <constraint firstItem="vs6-qU-K7r" firstAttribute="top" secondItem="JSh-uI-7Wu" secondAttribute="top" id="TVw-iA-duL"/>
+                            <constraint firstAttribute="bottom" secondItem="vs6-qU-K7r" secondAttribute="bottom" id="fgZ-hX-v5R"/>
+                            <constraint firstItem="vs6-qU-K7r" firstAttribute="leading" secondItem="JSh-uI-7Wu" secondAttribute="leading" id="yMG-ya-QhG"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="About" id="ZUR-EP-Bot">
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="xPO-BL-VGZ">
+                            <connections>
+                                <action selector="close:" destination="MaM-Ov-GMC" id="ndg-hS-z7Y"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="webView" destination="vs6-qU-K7r" id="Aw0-JM-dgR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LWG-XG-vYm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="459" y="731"/>
         </scene>
         <!--Dict Master View Controller - Master-->
         <scene sceneID="VgW-fR-Quf">
@@ -156,7 +215,13 @@
                             <outlet property="delegate" destination="pGg-6v-bdr" id="Y6K-Cp-Qkv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Dictionæry" id="tQt-TN-PWz"/>
+                    <navigationItem key="navigationItem" title="Dictionæry" id="tQt-TN-PWz">
+                        <barButtonItem key="rightBarButtonItem" title="About" id="0u0-z6-B06">
+                            <connections>
+                                <segue destination="qZS-po-SjG" kind="modal" id="hbP-5E-NhW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="EEV-wk-VAk" id="qtd-3n-vjA"/>
                         <outlet property="searchDisplayController" destination="bfs-9y-qrd" id="WTv-NV-c14"/>
@@ -176,7 +241,7 @@
             <point key="canvasLocation" x="459" y="64"/>
         </scene>
     </scenes>
-    <color key="tintColor" red="0.25809176823872548" green="0.75269616168478259" blue="0.54164692093856492" alpha="1" colorSpace="calibratedRGB"/>
+    <color key="tintColor" red="0.29803921568627451" green="0.78431372549019607" blue="0.60784313725490191" alpha="1" colorSpace="deviceRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
