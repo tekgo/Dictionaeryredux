@@ -23,16 +23,25 @@
     return self;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self loadHTML];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    
+    
+}
+
+-(void)loadHTML {
     NSString* filePath = [[NSBundle mainBundle] pathForResource:@"about" ofType:@"html"];
     NSURL* fileURL = [NSURL fileURLWithPath:filePath];
     NSURLRequest* request = [NSURLRequest requestWithURL:fileURL];
     [_webView loadRequest:request];
-    
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {

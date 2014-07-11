@@ -53,6 +53,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		581A4ED7197083BA00A7C402 /* icon.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = icon.psd; sourceTree = "<group>"; };
 		584468B21959CCA4002561C6 /* dictTraumaeWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dictTraumaeWord.h; sourceTree = "<group>"; };
 		584468B31959CCA4002561C6 /* dictTraumaeWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dictTraumaeWord.m; sourceTree = "<group>"; };
 		58566578195A7DB600611455 /* template.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = template.html; sourceTree = "<group>"; };
@@ -130,6 +131,7 @@
 		584468B11959CC6B002561C6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				581A4ED7197083BA00A7C402 /* icon.psd */,
 				58931CFB1947F8F800888967 /* Septambres-Revisit.ttf */,
 				58B197E8194790D000B9D9FA /* dict.json */,
 			);
