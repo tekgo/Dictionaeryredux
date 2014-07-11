@@ -14,6 +14,9 @@
 {
     // Override point for customization after application launch.
     //[UIApplication sharedApplication].statusBarHidden = YES;
+    
+    [self.window setTintColor:[UIColor blackColor]];
+    
     return YES;
 }
 							
